@@ -72,36 +72,36 @@ function copyDirRecursive(src: string, dest: string): void {
   }
 }
 
-// ─── flx-icon ───────────────────────────────────────────────────────────────
+// // ─── flx-icon ───────────────────────────────────────────────────────────────
 
-console.log("\n── flx-icon ──────────────────────────────────────────────────");
+// console.log("\n── flx-icon ──────────────────────────────────────────────────");
 
-const registryBlob = path.join(ROOT, "cdn", "fluixi-icons-all.js");
-copy(registryBlob, path.join(FLX_ICON, "src",      "registry.js"));
-copy(registryBlob, path.join(FLX_ICON, "dist/src", "registry.js"));
+// const registryBlob = path.join(ROOT, "cdn", "fluixi-icons-all.js");
+// copy(registryBlob, path.join(FLX_ICON, "src",      "registry.js"));
+// copy(registryBlob, path.join(FLX_ICON, "dist/src", "registry.js"));
 
-const spritesDir        = path.join(ROOT,    "sprites");
-const flxIconSpritesDir = path.join(FLX_ICON, "dist/src/sprites");
-copyDir(spritesDir, flxIconSpritesDir, (f) => f.endsWith(".svg") || f.endsWith(".json"));
+// const spritesDir        = path.join(ROOT,    "sprites");
+// const flxIconSpritesDir = path.join(FLX_ICON, "dist/src/sprites");
+// copyDir(spritesDir, flxIconSpritesDir, (f) => f.endsWith(".svg") || f.endsWith(".json"));
 
-// ─── react ──────────────────────────────────────────────────────────────────
-// generate-modules.ts already writes react/icons/*.tsx directly.
-// Here we copy the compiled dist/icons/ output so the published package is
-// up-to-date without requiring a separate build step in this script.
+// // ─── react ──────────────────────────────────────────────────────────────────
+// // generate-modules.ts already writes react/icons/*.tsx directly.
+// // Here we copy the compiled dist/icons/ output so the published package is
+// // up-to-date without requiring a separate build step in this script.
 
-console.log("\n── react ─────────────────────────────────────────────────────");
+// console.log("\n── react ─────────────────────────────────────────────────────");
 
-const reactDistIcons = path.join(REACT, "dist", "icons");
-if (fs.existsSync(reactDistIcons)) {
-  console.log(`  ✓ dist/icons already present (built by react package)`);
-} else {
-  console.warn(
-    `  [info] react/dist/icons not found — run the react package build first`,
-  );
-}
+// const reactDistIcons = path.join(REACT, "dist", "icons");
+// if (fs.existsSync(reactDistIcons)) {
+//   console.log(`  ✓ dist/icons already present (built by react package)`);
+// } else {
+//   console.warn(
+//     `  [info] react/dist/icons not found — run the react package build first`,
+//   );
+// }
 
-// Copy sprites into react dist so React consumers can also reference them
-const reactSpritesDir = path.join(REACT, "dist", "sprites");
-copyDir(spritesDir, reactSpritesDir, (f) => f.endsWith(".svg") || f.endsWith(".json"));
+// // Copy sprites into react dist so React consumers can also reference them
+// const reactSpritesDir = path.join(REACT, "dist", "sprites");
+// copyDir(spritesDir, reactSpritesDir, (f) => f.endsWith(".svg") || f.endsWith(".json"));
 
-console.log("\n✅ Done. fluixi-webcomponents is up to date.");
+// console.log("\n✅ Done. fluixi-webcomponents is up to date.");

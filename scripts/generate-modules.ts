@@ -34,12 +34,12 @@ const INDEX_FILE = 'index'
 const IMPORT_FILE = 'imports-maps'
 const ALL_FILES = 'all'
 
-const TEMPLATES_BASE_PATH = path.resolve(__dirname, "../../libs/fluixi-webcomponents/packages/components/flx-icon")
-const TEMPLATES_SRC_PATH = path.join(TEMPLATES_BASE_PATH, 'src')
-const REACT_SRC_PATH = path.resolve(
-  __dirname,
-  "../../libs/fluixi-webcomponents/packages/components/react",
-);
+// const TEMPLATES_BASE_PATH = path.resolve(__dirname, "../../libs/fluixi-webcomponents/packages/components/flx-icon")
+// const TEMPLATES_SRC_PATH = path.join(TEMPLATES_BASE_PATH, 'src')
+// const REACT_SRC_PATH = path.resolve(
+//   __dirname,
+//   "../../libs/fluixi-webcomponents/packages/components/react",
+// );
 
 
 const getVarName = (pkgName: string, baseName: string, camel = false)=>{
@@ -1025,9 +1025,9 @@ const getRelativeImportPath = (file: string, srcDir: string)=>{
     return path_relative
 }
 
-const writeFullReactIndex = (sets: string[])=>{
-    writeFiles(path.join(REACT_SRC_PATH, 'icons', `index.ts`), sets.map(s=>`export * from "./${path.join(s, 'index')}.js"`).join('\n'), true, {matcher: 'react/icons', value: 'react/lib/icons'})
-}
+// const writeFullReactIndex = (sets: string[])=>{
+//     writeFiles(path.join(REACT_SRC_PATH, 'icons', `index.ts`), sets.map(s=>`export * from "./${path.join(s, 'index')}.js"`).join('\n'), true, {matcher: 'react/icons', value: 'react/lib/icons'})
+// }
 
 interface ValueType{data: any[], index: string[], icons: string[]}
 interface ModuleConfig{
@@ -1050,19 +1050,18 @@ const writeTemplate = (template: ComponentTemplate, setName: string, values: any
         values[v] = {data: [] as any[], index: [], icons: [], react: {index: []} as any}
     }
     values[v].data.push({...pick(template, ['component_name', 'component_tag_name', 'name']), base_path: v})
-    const full_path = path.join(TEMPLATES_SRC_PATH, template.file_path)
-    const full_react_path = path.join(REACT_SRC_PATH, "icons", path.dirname(template.file_path))
-    const base_react_path = path.dirname(template.file_path).replace(`${setName}/`, '').split(path.sep).pop();
+    // const full_path = path.join(TEMPLATES_SRC_PATH, template.file_path)
+    // const full_react_path = path.join(REACT_SRC_PATH, "icons", path.dirname(template.file_path))
     // console.log('base react', base_react_path)
     const base_path = template.file_path.replace(`${setName}/`, '').split(path.sep).pop()
     // console.log('base', {base_path, v, replaced_path, full: `${full_path}/${template.filename}`, def: `${full_path}/${template.definitionFileName}`})
     // console.log('writting', {full_path, full_react_path})
-    ensureDir(full_path)
-    writeFiles(`${full_path}/${template.filename}`, template.template, template.web_component_type, {matcher: 'src/', value: 'lib/'})
-    writeFiles(`${full_path}/${template.definitionFileName}`, template.definition, true, {matcher: 'src/', value: 'lib/'})
-    writeFiles(`${full_path}/index.ts`, template.index, true, {matcher: 'src/', value: 'lib/'})
-    ensureDir(full_react_path)
-    writeFiles(`${full_react_path}/${template.name}.tsx`, template.react_component, template.react_component_type, {matcher: 'react/icons', value: 'react/lib/icons'})
+    // ensureDir(full_path)
+    // writeFiles(`${full_path}/${template.filename}`, template.template, template.web_component_type, {matcher: 'src/', value: 'lib/'})
+    // writeFiles(`${full_path}/${template.definitionFileName}`, template.definition, true, {matcher: 'src/', value: 'lib/'})
+    // writeFiles(`${full_path}/index.ts`, template.index, true, {matcher: 'src/', value: 'lib/'})
+    // ensureDir(full_react_path)
+    // writeFiles(`${full_react_path}/${template.name}.tsx`, template.react_component, template.react_component_type, {matcher: 'react/icons', value: 'react/lib/icons'})
     values[v].index.push(`export {${template.component_name}} from "./${base_path}/index.js"`)
     values[v].icons.push(`import "./${base_path}/${template.name}.register.js"`)
     if(!values[v]["react"]){
@@ -1142,8 +1141,8 @@ const writeComponents = async (setName: string, _templates: TreeTemplate, distDi
             for(let j=0; j<main.length;j++){
                 const v = main[j]
                 const relative_to_setname = path.join(setName, ...vr[i])
-                const tp = path.join(TEMPLATES_SRC_PATH, relative_to_setname)
-                const react_path = path.join(REACT_SRC_PATH, 'icons', relative_to_setname)
+                // const tp = path.join(TEMPLATES_SRC_PATH, relative_to_setname)
+                // const react_path = path.join(REACT_SRC_PATH, 'icons', relative_to_setname)
                 const data = values[vr[i].join(path.sep)] as ValueType & {
                     react: Omit<ValueType, "icons">;
                 };
@@ -1166,9 +1165,9 @@ const writeComponents = async (setName: string, _templates: TreeTemplate, distDi
                         // writeFiles(path.join(tp, `index.ts`), Array.from(new Set(data.index)).join('\n'), true, {matcher: 'src/', value: 'lib/'})
                         // writeFiles(path.join(tp, `icons.register.ts`), Array.from(new Set(data.icons)).join("\n"), true, {matcher: 'src/', value: 'lib/'})
                         // writeFiles(path.join(react_path, `index.ts`), Array.from(new Set(data.react.index)).join("\n"), true, {matcher: 'react/icons', value: 'react/lib/icons'})
-                        addModule(modules, {file: path.join(tp, `index.ts`), content: Array.from(new Set(data.index)).join('\n'), matcher: {matcher: 'src/', value: 'lib/'}})
-                        addModule(modules, {file: path.join(tp, `icons.register.ts`), content: Array.from(new Set(data.icons)).join("\n"), matcher: {matcher: 'src/', value: 'lib/'}})
-                        addModule(react_modules, {file: path.join(react_path, `index.ts`), content: Array.from(new Set(data.react.index)).join("\n"), matcher: {matcher: 'react/icons', value: 'react/lib/icons'}})
+                        // addModule(modules, {file: path.join(tp, `index.ts`), content: Array.from(new Set(data.index)).join('\n'), matcher: {matcher: 'src/', value: 'lib/'}})
+                        // addModule(modules, {file: path.join(tp, `icons.register.ts`), content: Array.from(new Set(data.icons)).join("\n"), matcher: {matcher: 'src/', value: 'lib/'}})
+                        // addModule(react_modules, {file: path.join(react_path, `index.ts`), content: Array.from(new Set(data.react.index)).join("\n"), matcher: {matcher: 'react/icons', value: 'react/lib/icons'}})
                     }else{
                         console.log('no value key', vr[i].join(path.sep), Object.keys(values))
                         
@@ -1176,8 +1175,8 @@ const writeComponents = async (setName: string, _templates: TreeTemplate, distDi
                 }else{
                     const vv = main.slice().filter(s=>s!==v)
                     const imports_paths = main.slice().reverse().slice(j - 1 , 1)
-                    const tp = path.join(TEMPLATES_SRC_PATH, setName, ...vv)
-                    const react_path = path.join(REACT_SRC_PATH, 'icons', setName, ...vv)
+                    // const tp = path.join(TEMPLATES_SRC_PATH, setName, ...vv)
+                    // const react_path = path.join(REACT_SRC_PATH, 'icons', setName, ...vv)
                     const exports_data_index = `export * from "./${imports_paths.join(path.sep)}/index.js"`
                     const exports_data_icon = `export * from "./${imports_paths.join(path.sep)}/icons.register.js"`
                     const react_exports_data_index = `export * from "./${imports_paths.join(path.sep)}/index.js"`
@@ -1189,11 +1188,11 @@ const writeComponents = async (setName: string, _templates: TreeTemplate, distDi
                     //     console.log('write ic', {tp, main, reversed})
                     // }
 
-                    addModule(modules, {file: path.join(tp, `index.ts`), content: exports_data_index, matcher: {matcher: 'src/', value: 'lib/'}})
-                    addModule(modules, {file: path.join(tp, `icons.register.ts`), content: exports_data_icon, matcher: {matcher: 'src/', value: 'lib/'}})
-                    addModule(react_modules, {file: path.join(react_path, `index.ts`), content: react_exports_data_index, matcher: {matcher: 'react/icons', value: 'react/lib/icons'}})
-                    react_packages_exports.push(construcPkgExport(path.join('icons', setName, ...main), 'index', {includes: ['types', 'default'], distDir: 'dist', 'extensions': ['js']}))
-                    react_packages_exports.push(construcPkgExport(path.join('icons', setName, ...main), 'index', {includes: ['types', 'default'], distDir: 'dist', 'extensions': ['js'], isRoot: true}))
+                    // addModule(modules, {file: path.join(tp, `index.ts`), content: exports_data_index, matcher: {matcher: 'src/', value: 'lib/'}})
+                    // addModule(modules, {file: path.join(tp, `icons.register.ts`), content: exports_data_icon, matcher: {matcher: 'src/', value: 'lib/'}})
+                    // addModule(react_modules, {file: path.join(react_path, `index.ts`), content: react_exports_data_index, matcher: {matcher: 'react/icons', value: 'react/lib/icons'}})
+                    // react_packages_exports.push(construcPkgExport(path.join('icons', setName, ...main), 'index', {includes: ['types', 'default'], distDir: 'dist', 'extensions': ['js']}))
+                    // react_packages_exports.push(construcPkgExport(path.join('icons', setName, ...main), 'index', {includes: ['types', 'default'], distDir: 'dist', 'extensions': ['js'], isRoot: true}))
                     // for(const _value of main){
                     //     react_packages_exports.push(construcPkgExport(path.join('icons', setName, _value), 'index', {includes: ['types', 'default'], distDir: 'dist', 'extensions': ['js']}))
                     //     react_packages_exports.push(construcPkgExport(path.join('icons', setName, _value), 'index', {includes: ['types', 'default'], distDir: 'dist', 'extensions': ['js'], isRoot: true}))
@@ -1234,13 +1233,13 @@ const writeComponents = async (setName: string, _templates: TreeTemplate, distDi
             writeFiles(file, content, true, matches[0].matcher)
         }
         
-        const global_variants_index_export = vr.slice().map(v=>[`export * from "./${path.join(v[0], 'index')}.js"`])
-        const global_variants_icons_export = vr.slice().map(v=>[`import "./${path.join(v[0], 'icons.register')}.js"`])
+        // const global_variants_index_export = vr.slice().map(v=>[`export * from "./${path.join(v[0], 'index')}.js"`])
+        // const global_variants_icons_export = vr.slice().map(v=>[`import "./${path.join(v[0], 'icons.register')}.js"`])
         // console.log('write ic', {icons, vr, setName, global_variants_index_export, global_variants_icons_export})
-        writeFiles(path.join(TEMPLATES_SRC_PATH, setName, `index.ts`), Array.from(new Set(global_variants_index_export.slice().flat())).join('\n'), true, {matcher: 'src/', value: 'lib/'})
-        writeFiles(path.join(TEMPLATES_SRC_PATH, setName, `icons.register.ts`), Array.from(new Set(global_variants_icons_export.slice().flat())).join('\n'), true, {matcher: 'src/', value: 'lib/'})
-        const global_react_variants_index_export = vr.slice().map(v=>[`export * from "./${path.join(v[0], 'index')}.js"`])
-        writeFiles(path.join(REACT_SRC_PATH, 'icons', setName, `index.ts`), Array.from(new Set(global_react_variants_index_export.slice().flat())).join('\n'), true, {matcher: 'react/icons', value: 'react/lib/icons'})
+        // writeFiles(path.join(TEMPLATES_SRC_PATH, setName, `index.ts`), Array.from(new Set(global_variants_index_export.slice().flat())).join('\n'), true, {matcher: 'src/', value: 'lib/'})
+        // writeFiles(path.join(TEMPLATES_SRC_PATH, setName, `icons.register.ts`), Array.from(new Set(global_variants_icons_export.slice().flat())).join('\n'), true, {matcher: 'src/', value: 'lib/'})
+        // const global_react_variants_index_export = vr.slice().map(v=>[`export * from "./${path.join(v[0], 'index')}.js"`])
+        // writeFiles(path.join(REACT_SRC_PATH, 'icons', setName, `index.ts`), Array.from(new Set(global_react_variants_index_export.slice().flat())).join('\n'), true, {matcher: 'react/icons', value: 'react/lib/icons'})
         
     }else{
         const value = values['__default__'] as ValueType & {
@@ -1265,19 +1264,15 @@ const writeComponents = async (setName: string, _templates: TreeTemplate, distDi
             })
             react_packages_exports.push(construcPkgExport(path.join('icons', setName), 'index', {includes: ['types', 'default'], distDir: 'dist', 'extensions': ['js']}))
             react_packages_exports.push(construcPkgExport(path.join('icons', setName), 'index', {includes: ['types', 'default'], distDir: 'dist', 'extensions': ['js'], isRoot: true}))
-            writeFiles(path.join(TEMPLATES_SRC_PATH, setName, `index.ts`), Array.from(new Set(indexes)).join("\n"), true, {matcher: 'src/', value: 'lib/'})
-            writeFiles(path.join(TEMPLATES_SRC_PATH, setName, `icons.register.ts`), Array.from(new Set(icons)).join("\n"), true, {matcher: 'src/', value: 'lib/'})
-            writeFiles(path.join(REACT_SRC_PATH, 'icons', setName, `index.ts`), Array.from(new Set(react_index)).join("\n"), true, {matcher: 'react/icons', value: 'react/lib/icons'})
+            // writeFiles(path.join(TEMPLATES_SRC_PATH, setName, `index.ts`), Array.from(new Set(indexes)).join("\n"), true, {matcher: 'src/', value: 'lib/'})
+            // writeFiles(path.join(TEMPLATES_SRC_PATH, setName, `icons.register.ts`), Array.from(new Set(icons)).join("\n"), true, {matcher: 'src/', value: 'lib/'})
+            // writeFiles(path.join(REACT_SRC_PATH, 'icons', setName, `index.ts`), Array.from(new Set(react_index)).join("\n"), true, {matcher: 'react/icons', value: 'react/lib/icons'})
         }
         // return
     }
     
     component_pkgs.push(construcPkgExport(setName, '*', {distDir: `${path.basename(distDir)}/src`, includes: ['types', 'default'], addSrc: true, extensions: ['js', 'cjs']}))
-    updatePackageJson(TEMPLATES_BASE_PATH, component_pkgs)
-    updatePackageJson(REACT_SRC_PATH, deduplicateByValue(react_packages_exports.reverse()))
-    updateBuildConfigJson(TEMPLATES_BASE_PATH, build_configs)
-    // writeFiles(path.join(REACT_SRC_PATH, 'icons', setName, `package-json.json`), JSON.stringify(deduplicateByValue(react_packages_exports.reverse())), true, false, {matcher: 'react/icons', value: 'react/lib/icons'})
-    // fs.writeFileSync(path.join(TEMPLATES_SRC_PATH, setName, `build-config-json.json`), JSON.stringify(build_configs))
+    // updatePackageJson(TEMPLATES_BASE_PATH, component_pkgs)
     return "ok"
     
 }
@@ -1520,23 +1515,7 @@ async function generateIconsModules(test: boolean = false) {
     await generateGlobalRegistry({srcDir: PACKAGES_DIR} as any, INDEX_FILE)
     // await generateGlobalRegistry({srcDir: PACKAGES_DIR} as any, IMPORT_FILE)
     await generateGlobalRegistry({srcDir: PACKAGES_DIR} as any, ALL_FILES)
-    // if(whitelist_packages.length>0){
-    //     writeFullReactIndex(libraries.slice().filter(l=>whitelist_packages.some(i=>i===`icon-${l}`)))
-    // }else{
-    // }
-    writeFullReactIndex(libraries.slice())
-    // const promises = (await Promise.all(dirs.map(dir=>{
-    //     const pkgDir = path.join(PACKAGES_DIR, dir);
-    //     if (fs.lstatSync(pkgDir).isDirectory()){
-    //         if(excluded.some(e=>e===dir)) return null
-    //         return generateAll(pkgDir);
-    //         // return buildIconModules(pkgDir, test);
-    //     }
-    //     return null;
-    // }))).filter(Boolean);
-    // if(promises.length===dirs.length){
-    //     console.log("🎉 All icons generated successfully!");
-    // }
+    // writeFullReactIndex(libraries.slice())
     console.log("🎉 All icons generated successfully!");
     return whitelist_packages
 }
