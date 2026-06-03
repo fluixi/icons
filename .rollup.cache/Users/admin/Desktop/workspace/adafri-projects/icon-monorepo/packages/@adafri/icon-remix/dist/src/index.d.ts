@@ -1,4 +1,0 @@
-import Icons from "./icons/index.js";
-export type { RiName } from "./icons/index.js";
-export default Icons;
-export { Icons };

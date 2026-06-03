@@ -1,0 +1,221 @@
+{
+  "name": "@fluixi/icon-iconoir",
+  "description": "Iconoir SVG data \u2014 1600+ icons, regular/solid",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  },
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.json"
+  },
+  "exports": {
+    "./all": {
+      "types": "./dist/all.d.ts",
+      "default": "./dist/all.js",
+      "import": "./dist/all.js",
+      "require": "./dist/all.js"
+    },
+    "./all.js": {
+      "types": "./dist/all.d.ts",
+      "default": "./dist/all.js",
+      "import": "./dist/all.js",
+      "require": "./dist/all.js"
+    },
+    "./src/all": {
+      "types": "./dist/all.d.ts",
+      "default": "./dist/all.js",
+      "import": "./dist/all.js",
+      "require": "./dist/all.js"
+    },
+    "./src/all.js": {
+      "types": "./dist/all.d.ts",
+      "default": "./dist/all.js",
+      "import": "./dist/all.js",
+      "require": "./dist/all.js"
+    },
+    "./icons/index": {
+      "types": "./dist/icons/index.d.ts",
+      "default": "./dist/icons/index.js",
+      "import": "./dist/icons/index.js",
+      "require": "./dist/icons/index.js"
+    },
+    "./icons/index.js": {
+      "types": "./dist/icons/index.d.ts",
+      "default": "./dist/icons/index.js",
+      "import": "./dist/icons/index.js",
+      "require": "./dist/icons/index.js"
+    },
+    "./src/icons/index": {
+      "types": "./dist/icons/index.d.ts",
+      "default": "./dist/icons/index.js",
+      "import": "./dist/icons/index.js",
+      "require": "./dist/icons/index.js"
+    },
+    "./src/icons/index.js": {
+      "types": "./dist/icons/index.d.ts",
+      "default": "./dist/icons/index.js",
+      "import": "./dist/icons/index.js",
+      "require": "./dist/icons/index.js"
+    },
+    "./index": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./index.js": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./src/index": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./src/index.js": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./icons/regular/index": {
+      "types": "./dist/icons/regular/index.d.ts",
+      "default": "./dist/icons/regular/index.js",
+      "import": "./dist/icons/regular/index.js",
+      "require": "./dist/icons/regular/index.js"
+    },
+    "./icons/regular/index.js": {
+      "types": "./dist/icons/regular/index.d.ts",
+      "default": "./dist/icons/regular/index.js",
+      "import": "./dist/icons/regular/index.js",
+      "require": "./dist/icons/regular/index.js"
+    },
+    "./src/icons/regular/index": {
+      "types": "./dist/icons/regular/index.d.ts",
+      "default": "./dist/icons/regular/index.js",
+      "import": "./dist/icons/regular/index.js",
+      "require": "./dist/icons/regular/index.js"
+    },
+    "./src/icons/regular/index.js": {
+      "types": "./dist/icons/regular/index.d.ts",
+      "default": "./dist/icons/regular/index.js",
+      "import": "./dist/icons/regular/index.js",
+      "require": "./dist/icons/regular/index.js"
+    },
+    "./icons/solid/index": {
+      "types": "./dist/icons/solid/index.d.ts",
+      "default": "./dist/icons/solid/index.js",
+      "import": "./dist/icons/solid/index.js",
+      "require": "./dist/icons/solid/index.js"
+    },
+    "./icons/solid/index.js": {
+      "types": "./dist/icons/solid/index.d.ts",
+      "default": "./dist/icons/solid/index.js",
+      "import": "./dist/icons/solid/index.js",
+      "require": "./dist/icons/solid/index.js"
+    },
+    "./src/icons/solid/index": {
+      "types": "./dist/icons/solid/index.d.ts",
+      "default": "./dist/icons/solid/index.js",
+      "import": "./dist/icons/solid/index.js",
+      "require": "./dist/icons/solid/index.js"
+    },
+    "./src/icons/solid/index.js": {
+      "types": "./dist/icons/solid/index.d.ts",
+      "default": "./dist/icons/solid/index.js",
+      "import": "./dist/icons/solid/index.js",
+      "require": "./dist/icons/solid/index.js"
+    },
+    "./icons/regular/all": {
+      "types": "./dist/icons/regular/all.d.ts",
+      "default": "./dist/icons/regular/all.js",
+      "import": "./dist/icons/regular/all.js",
+      "require": "./dist/icons/regular/all.js"
+    },
+    "./icons/regular/all.js": {
+      "types": "./dist/icons/regular/all.d.ts",
+      "default": "./dist/icons/regular/all.js",
+      "import": "./dist/icons/regular/all.js",
+      "require": "./dist/icons/regular/all.js"
+    },
+    "./src/icons/regular/all": {
+      "types": "./dist/icons/regular/all.d.ts",
+      "default": "./dist/icons/regular/all.js",
+      "import": "./dist/icons/regular/all.js",
+      "require": "./dist/icons/regular/all.js"
+    },
+    "./src/icons/regular/all.js": {
+      "types": "./dist/icons/regular/all.d.ts",
+      "default": "./dist/icons/regular/all.js",
+      "import": "./dist/icons/regular/all.js",
+      "require": "./dist/icons/regular/all.js"
+    },
+    "./icons/solid/all": {
+      "types": "./dist/icons/solid/all.d.ts",
+      "default": "./dist/icons/solid/all.js",
+      "import": "./dist/icons/solid/all.js",
+      "require": "./dist/icons/solid/all.js"
+    },
+    "./icons/solid/all.js": {
+      "types": "./dist/icons/solid/all.d.ts",
+      "default": "./dist/icons/solid/all.js",
+      "import": "./dist/icons/solid/all.js",
+      "require": "./dist/icons/solid/all.js"
+    },
+    "./src/icons/solid/all": {
+      "types": "./dist/icons/solid/all.d.ts",
+      "default": "./dist/icons/solid/all.js",
+      "import": "./dist/icons/solid/all.js",
+      "require": "./dist/icons/solid/all.js"
+    },
+    "./src/icons/solid/all.js": {
+      "types": "./dist/icons/solid/all.d.ts",
+      "default": "./dist/icons/solid/all.js",
+      "import": "./dist/icons/solid/all.js",
+      "require": "./dist/icons/solid/all.js"
+    },
+    "./icons/all": {
+      "types": "./dist/icons/all.d.ts",
+      "default": "./dist/icons/all.js",
+      "import": "./dist/icons/all.js",
+      "require": "./dist/icons/all.js"
+    },
+    "./icons/all.js": {
+      "types": "./dist/icons/all.d.ts",
+      "default": "./dist/icons/all.js",
+      "import": "./dist/icons/all.js",
+      "require": "./dist/icons/all.js"
+    },
+    "./src/icons/all": {
+      "types": "./dist/icons/all.d.ts",
+      "default": "./dist/icons/all.js",
+      "import": "./dist/icons/all.js",
+      "require": "./dist/icons/all.js"
+    },
+    "./src/icons/all.js": {
+      "types": "./dist/icons/all.d.ts",
+      "default": "./dist/icons/all.js",
+      "import": "./dist/icons/all.js",
+      "require": "./dist/icons/all.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fluixi/icons.git",
+    "directory": "packages/icons/icon-iconoir"
+  }
+}

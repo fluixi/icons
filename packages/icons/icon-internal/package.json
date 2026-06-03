@@ -1,0 +1,279 @@
+{
+  "name": "@fluixi/icon-internal",
+  "version": "0.0.0",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  },
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6",
+    "svgo": "^3.1.0"
+  },
+  "exports": {
+    "./all-icons": {
+      "default": "./dist/all-icons.js",
+      "types": "./dist/all-icons.d.ts"
+    },
+    "./all-icons.js": {
+      "default": "./dist/all-icons.js",
+      "types": "./dist/all-icons.d.ts"
+    },
+    "./src/all-icons": {
+      "default": "./dist/all-icons.js",
+      "types": "./dist/all-icons.d.ts"
+    },
+    "./src/all-icons.js": {
+      "default": "./dist/all-icons.js",
+      "types": "./dist/all-icons.d.ts"
+    },
+    "./imports-map": {
+      "default": "./dist/imports-map.js",
+      "types": "./dist/imports-map.d.ts"
+    },
+    "./imports-map.js": {
+      "default": "./dist/imports-map.js",
+      "types": "./dist/imports-map.d.ts"
+    },
+    "./src/imports-map": {
+      "default": "./dist/imports-map.js",
+      "types": "./dist/imports-map.d.ts"
+    },
+    "./src/imports-map.js": {
+      "default": "./dist/imports-map.js",
+      "types": "./dist/imports-map.d.ts"
+    },
+    "./imports-maps": {
+      "default": "./dist/imports-maps.js",
+      "import": "./dist/imports-maps.js",
+      "require": "./dist/imports-maps.js",
+      "types": "./dist/imports-maps.d.ts"
+    },
+    "./imports-maps.js": {
+      "default": "./dist/imports-maps.js",
+      "import": "./dist/imports-maps.js",
+      "require": "./dist/imports-maps.js",
+      "types": "./dist/imports-maps.d.ts"
+    },
+    "./src/imports-maps": {
+      "default": "./dist/imports-maps.js",
+      "import": "./dist/imports-maps.js",
+      "require": "./dist/imports-maps.js",
+      "types": "./dist/imports-maps.d.ts"
+    },
+    "./src/imports-maps.js": {
+      "default": "./dist/imports-maps.js",
+      "import": "./dist/imports-maps.js",
+      "require": "./dist/imports-maps.js",
+      "types": "./dist/imports-maps.d.ts"
+    },
+    "./all": {
+      "types": "./dist/all.d.ts",
+      "default": "./dist/all.js",
+      "import": "./dist/all.js",
+      "require": "./dist/all.js"
+    },
+    "./all.js": {
+      "types": "./dist/all.d.ts",
+      "default": "./dist/all.js",
+      "import": "./dist/all.js",
+      "require": "./dist/all.js"
+    },
+    "./src/all": {
+      "types": "./dist/all.d.ts",
+      "default": "./dist/all.js",
+      "import": "./dist/all.js",
+      "require": "./dist/all.js"
+    },
+    "./src/all.js": {
+      "types": "./dist/all.d.ts",
+      "default": "./dist/all.js",
+      "import": "./dist/all.js",
+      "require": "./dist/all.js"
+    },
+    "./icons/index": {
+      "types": "./dist/icons/index.d.ts",
+      "default": "./dist/icons/index.js",
+      "import": "./dist/icons/index.js",
+      "require": "./dist/icons/index.js"
+    },
+    "./icons/index.js": {
+      "types": "./dist/icons/index.d.ts",
+      "default": "./dist/icons/index.js",
+      "import": "./dist/icons/index.js",
+      "require": "./dist/icons/index.js"
+    },
+    "./src/icons/index": {
+      "types": "./dist/icons/index.d.ts",
+      "default": "./dist/icons/index.js",
+      "import": "./dist/icons/index.js",
+      "require": "./dist/icons/index.js"
+    },
+    "./src/icons/index.js": {
+      "types": "./dist/icons/index.d.ts",
+      "default": "./dist/icons/index.js",
+      "import": "./dist/icons/index.js",
+      "require": "./dist/icons/index.js"
+    },
+    "./index": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./index.js": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./src/index": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./src/index.js": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./icons/filled/index": {
+      "types": "./dist/icons/filled/index.d.ts",
+      "default": "./dist/icons/filled/index.js",
+      "import": "./dist/icons/filled/index.js",
+      "require": "./dist/icons/filled/index.js"
+    },
+    "./icons/filled/index.js": {
+      "types": "./dist/icons/filled/index.d.ts",
+      "default": "./dist/icons/filled/index.js",
+      "import": "./dist/icons/filled/index.js",
+      "require": "./dist/icons/filled/index.js"
+    },
+    "./src/icons/filled/index": {
+      "types": "./dist/icons/filled/index.d.ts",
+      "default": "./dist/icons/filled/index.js",
+      "import": "./dist/icons/filled/index.js",
+      "require": "./dist/icons/filled/index.js"
+    },
+    "./src/icons/filled/index.js": {
+      "types": "./dist/icons/filled/index.d.ts",
+      "default": "./dist/icons/filled/index.js",
+      "import": "./dist/icons/filled/index.js",
+      "require": "./dist/icons/filled/index.js"
+    },
+    "./icons/outline/index": {
+      "types": "./dist/icons/outline/index.d.ts",
+      "default": "./dist/icons/outline/index.js",
+      "import": "./dist/icons/outline/index.js",
+      "require": "./dist/icons/outline/index.js"
+    },
+    "./icons/outline/index.js": {
+      "types": "./dist/icons/outline/index.d.ts",
+      "default": "./dist/icons/outline/index.js",
+      "import": "./dist/icons/outline/index.js",
+      "require": "./dist/icons/outline/index.js"
+    },
+    "./src/icons/outline/index": {
+      "types": "./dist/icons/outline/index.d.ts",
+      "default": "./dist/icons/outline/index.js",
+      "import": "./dist/icons/outline/index.js",
+      "require": "./dist/icons/outline/index.js"
+    },
+    "./src/icons/outline/index.js": {
+      "types": "./dist/icons/outline/index.d.ts",
+      "default": "./dist/icons/outline/index.js",
+      "import": "./dist/icons/outline/index.js",
+      "require": "./dist/icons/outline/index.js"
+    },
+    "./icons/filled/all": {
+      "types": "./dist/icons/filled/all.d.ts",
+      "default": "./dist/icons/filled/all.js",
+      "import": "./dist/icons/filled/all.js",
+      "require": "./dist/icons/filled/all.js"
+    },
+    "./icons/filled/all.js": {
+      "types": "./dist/icons/filled/all.d.ts",
+      "default": "./dist/icons/filled/all.js",
+      "import": "./dist/icons/filled/all.js",
+      "require": "./dist/icons/filled/all.js"
+    },
+    "./src/icons/filled/all": {
+      "types": "./dist/icons/filled/all.d.ts",
+      "default": "./dist/icons/filled/all.js",
+      "import": "./dist/icons/filled/all.js",
+      "require": "./dist/icons/filled/all.js"
+    },
+    "./src/icons/filled/all.js": {
+      "types": "./dist/icons/filled/all.d.ts",
+      "default": "./dist/icons/filled/all.js",
+      "import": "./dist/icons/filled/all.js",
+      "require": "./dist/icons/filled/all.js"
+    },
+    "./icons/outline/all": {
+      "types": "./dist/icons/outline/all.d.ts",
+      "default": "./dist/icons/outline/all.js",
+      "import": "./dist/icons/outline/all.js",
+      "require": "./dist/icons/outline/all.js"
+    },
+    "./icons/outline/all.js": {
+      "types": "./dist/icons/outline/all.d.ts",
+      "default": "./dist/icons/outline/all.js",
+      "import": "./dist/icons/outline/all.js",
+      "require": "./dist/icons/outline/all.js"
+    },
+    "./src/icons/outline/all": {
+      "types": "./dist/icons/outline/all.d.ts",
+      "default": "./dist/icons/outline/all.js",
+      "import": "./dist/icons/outline/all.js",
+      "require": "./dist/icons/outline/all.js"
+    },
+    "./src/icons/outline/all.js": {
+      "types": "./dist/icons/outline/all.d.ts",
+      "default": "./dist/icons/outline/all.js",
+      "import": "./dist/icons/outline/all.js",
+      "require": "./dist/icons/outline/all.js"
+    },
+    "./icons/all": {
+      "types": "./dist/icons/all.d.ts",
+      "default": "./dist/icons/all.js",
+      "import": "./dist/icons/all.js",
+      "require": "./dist/icons/all.js"
+    },
+    "./icons/all.js": {
+      "types": "./dist/icons/all.d.ts",
+      "default": "./dist/icons/all.js",
+      "import": "./dist/icons/all.js",
+      "require": "./dist/icons/all.js"
+    },
+    "./src/icons/all": {
+      "types": "./dist/icons/all.d.ts",
+      "default": "./dist/icons/all.js",
+      "import": "./dist/icons/all.js",
+      "require": "./dist/icons/all.js"
+    },
+    "./src/icons/all.js": {
+      "types": "./dist/icons/all.d.ts",
+      "default": "./dist/icons/all.js",
+      "import": "./dist/icons/all.js",
+      "require": "./dist/icons/all.js"
+    }
+  },
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fluixi/icons.git",
+    "directory": "packages/icons/icon-internal"
+  }
+}

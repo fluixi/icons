@@ -1,0 +1,13 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "tsBuildInfoFile": "../../../.tscache/app.tsbuildinfo"
+  },
+  "files": ["src/registry.d.ts"],
+  "types": ["node"],
+  "include": [
+    "src",
+    "src/registry.d.ts"
+  ]
+}

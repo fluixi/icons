@@ -1,0 +1,461 @@
+{
+  "name": "@fluixi/icon-heroicons",
+  "description": "Heroicons SVG data",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  },
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.json"
+  },
+  "exports": {
+    "./all": {
+      "types": "./dist/all.d.ts",
+      "default": "./dist/all.js",
+      "import": "./dist/all.js",
+      "require": "./dist/all.js"
+    },
+    "./all.js": {
+      "types": "./dist/all.d.ts",
+      "default": "./dist/all.js",
+      "import": "./dist/all.js",
+      "require": "./dist/all.js"
+    },
+    "./src/all": {
+      "types": "./dist/all.d.ts",
+      "default": "./dist/all.js",
+      "import": "./dist/all.js",
+      "require": "./dist/all.js"
+    },
+    "./src/all.js": {
+      "types": "./dist/all.d.ts",
+      "default": "./dist/all.js",
+      "import": "./dist/all.js",
+      "require": "./dist/all.js"
+    },
+    "./icons/index": {
+      "types": "./dist/icons/index.d.ts",
+      "default": "./dist/icons/index.js",
+      "import": "./dist/icons/index.js",
+      "require": "./dist/icons/index.js"
+    },
+    "./icons/index.js": {
+      "types": "./dist/icons/index.d.ts",
+      "default": "./dist/icons/index.js",
+      "import": "./dist/icons/index.js",
+      "require": "./dist/icons/index.js"
+    },
+    "./src/icons/index": {
+      "types": "./dist/icons/index.d.ts",
+      "default": "./dist/icons/index.js",
+      "import": "./dist/icons/index.js",
+      "require": "./dist/icons/index.js"
+    },
+    "./src/icons/index.js": {
+      "types": "./dist/icons/index.d.ts",
+      "default": "./dist/icons/index.js",
+      "import": "./dist/icons/index.js",
+      "require": "./dist/icons/index.js"
+    },
+    "./index": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./index.js": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./src/index": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./src/index.js": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./icons/16/index": {
+      "types": "./dist/icons/16/index.d.ts",
+      "default": "./dist/icons/16/index.js",
+      "import": "./dist/icons/16/index.js",
+      "require": "./dist/icons/16/index.js"
+    },
+    "./icons/16/index.js": {
+      "types": "./dist/icons/16/index.d.ts",
+      "default": "./dist/icons/16/index.js",
+      "import": "./dist/icons/16/index.js",
+      "require": "./dist/icons/16/index.js"
+    },
+    "./src/icons/16/index": {
+      "types": "./dist/icons/16/index.d.ts",
+      "default": "./dist/icons/16/index.js",
+      "import": "./dist/icons/16/index.js",
+      "require": "./dist/icons/16/index.js"
+    },
+    "./src/icons/16/index.js": {
+      "types": "./dist/icons/16/index.d.ts",
+      "default": "./dist/icons/16/index.js",
+      "import": "./dist/icons/16/index.js",
+      "require": "./dist/icons/16/index.js"
+    },
+    "./icons/16/solid/index": {
+      "types": "./dist/icons/16/solid/index.d.ts",
+      "default": "./dist/icons/16/solid/index.js",
+      "import": "./dist/icons/16/solid/index.js",
+      "require": "./dist/icons/16/solid/index.js"
+    },
+    "./icons/16/solid/index.js": {
+      "types": "./dist/icons/16/solid/index.d.ts",
+      "default": "./dist/icons/16/solid/index.js",
+      "import": "./dist/icons/16/solid/index.js",
+      "require": "./dist/icons/16/solid/index.js"
+    },
+    "./src/icons/16/solid/index": {
+      "types": "./dist/icons/16/solid/index.d.ts",
+      "default": "./dist/icons/16/solid/index.js",
+      "import": "./dist/icons/16/solid/index.js",
+      "require": "./dist/icons/16/solid/index.js"
+    },
+    "./src/icons/16/solid/index.js": {
+      "types": "./dist/icons/16/solid/index.d.ts",
+      "default": "./dist/icons/16/solid/index.js",
+      "import": "./dist/icons/16/solid/index.js",
+      "require": "./dist/icons/16/solid/index.js"
+    },
+    "./icons/20/index": {
+      "types": "./dist/icons/20/index.d.ts",
+      "default": "./dist/icons/20/index.js",
+      "import": "./dist/icons/20/index.js",
+      "require": "./dist/icons/20/index.js"
+    },
+    "./icons/20/index.js": {
+      "types": "./dist/icons/20/index.d.ts",
+      "default": "./dist/icons/20/index.js",
+      "import": "./dist/icons/20/index.js",
+      "require": "./dist/icons/20/index.js"
+    },
+    "./src/icons/20/index": {
+      "types": "./dist/icons/20/index.d.ts",
+      "default": "./dist/icons/20/index.js",
+      "import": "./dist/icons/20/index.js",
+      "require": "./dist/icons/20/index.js"
+    },
+    "./src/icons/20/index.js": {
+      "types": "./dist/icons/20/index.d.ts",
+      "default": "./dist/icons/20/index.js",
+      "import": "./dist/icons/20/index.js",
+      "require": "./dist/icons/20/index.js"
+    },
+    "./icons/20/solid/index": {
+      "types": "./dist/icons/20/solid/index.d.ts",
+      "default": "./dist/icons/20/solid/index.js",
+      "import": "./dist/icons/20/solid/index.js",
+      "require": "./dist/icons/20/solid/index.js"
+    },
+    "./icons/20/solid/index.js": {
+      "types": "./dist/icons/20/solid/index.d.ts",
+      "default": "./dist/icons/20/solid/index.js",
+      "import": "./dist/icons/20/solid/index.js",
+      "require": "./dist/icons/20/solid/index.js"
+    },
+    "./src/icons/20/solid/index": {
+      "types": "./dist/icons/20/solid/index.d.ts",
+      "default": "./dist/icons/20/solid/index.js",
+      "import": "./dist/icons/20/solid/index.js",
+      "require": "./dist/icons/20/solid/index.js"
+    },
+    "./src/icons/20/solid/index.js": {
+      "types": "./dist/icons/20/solid/index.d.ts",
+      "default": "./dist/icons/20/solid/index.js",
+      "import": "./dist/icons/20/solid/index.js",
+      "require": "./dist/icons/20/solid/index.js"
+    },
+    "./icons/24/index": {
+      "types": "./dist/icons/24/index.d.ts",
+      "default": "./dist/icons/24/index.js",
+      "import": "./dist/icons/24/index.js",
+      "require": "./dist/icons/24/index.js"
+    },
+    "./icons/24/index.js": {
+      "types": "./dist/icons/24/index.d.ts",
+      "default": "./dist/icons/24/index.js",
+      "import": "./dist/icons/24/index.js",
+      "require": "./dist/icons/24/index.js"
+    },
+    "./src/icons/24/index": {
+      "types": "./dist/icons/24/index.d.ts",
+      "default": "./dist/icons/24/index.js",
+      "import": "./dist/icons/24/index.js",
+      "require": "./dist/icons/24/index.js"
+    },
+    "./src/icons/24/index.js": {
+      "types": "./dist/icons/24/index.d.ts",
+      "default": "./dist/icons/24/index.js",
+      "import": "./dist/icons/24/index.js",
+      "require": "./dist/icons/24/index.js"
+    },
+    "./icons/24/outline/index": {
+      "types": "./dist/icons/24/outline/index.d.ts",
+      "default": "./dist/icons/24/outline/index.js",
+      "import": "./dist/icons/24/outline/index.js",
+      "require": "./dist/icons/24/outline/index.js"
+    },
+    "./icons/24/outline/index.js": {
+      "types": "./dist/icons/24/outline/index.d.ts",
+      "default": "./dist/icons/24/outline/index.js",
+      "import": "./dist/icons/24/outline/index.js",
+      "require": "./dist/icons/24/outline/index.js"
+    },
+    "./src/icons/24/outline/index": {
+      "types": "./dist/icons/24/outline/index.d.ts",
+      "default": "./dist/icons/24/outline/index.js",
+      "import": "./dist/icons/24/outline/index.js",
+      "require": "./dist/icons/24/outline/index.js"
+    },
+    "./src/icons/24/outline/index.js": {
+      "types": "./dist/icons/24/outline/index.d.ts",
+      "default": "./dist/icons/24/outline/index.js",
+      "import": "./dist/icons/24/outline/index.js",
+      "require": "./dist/icons/24/outline/index.js"
+    },
+    "./icons/24/solid/index": {
+      "types": "./dist/icons/24/solid/index.d.ts",
+      "default": "./dist/icons/24/solid/index.js",
+      "import": "./dist/icons/24/solid/index.js",
+      "require": "./dist/icons/24/solid/index.js"
+    },
+    "./icons/24/solid/index.js": {
+      "types": "./dist/icons/24/solid/index.d.ts",
+      "default": "./dist/icons/24/solid/index.js",
+      "import": "./dist/icons/24/solid/index.js",
+      "require": "./dist/icons/24/solid/index.js"
+    },
+    "./src/icons/24/solid/index": {
+      "types": "./dist/icons/24/solid/index.d.ts",
+      "default": "./dist/icons/24/solid/index.js",
+      "import": "./dist/icons/24/solid/index.js",
+      "require": "./dist/icons/24/solid/index.js"
+    },
+    "./src/icons/24/solid/index.js": {
+      "types": "./dist/icons/24/solid/index.d.ts",
+      "default": "./dist/icons/24/solid/index.js",
+      "import": "./dist/icons/24/solid/index.js",
+      "require": "./dist/icons/24/solid/index.js"
+    },
+    "./icons/16/solid/all": {
+      "types": "./dist/icons/16/solid/all.d.ts",
+      "default": "./dist/icons/16/solid/all.js",
+      "import": "./dist/icons/16/solid/all.js",
+      "require": "./dist/icons/16/solid/all.js"
+    },
+    "./icons/16/solid/all.js": {
+      "types": "./dist/icons/16/solid/all.d.ts",
+      "default": "./dist/icons/16/solid/all.js",
+      "import": "./dist/icons/16/solid/all.js",
+      "require": "./dist/icons/16/solid/all.js"
+    },
+    "./src/icons/16/solid/all": {
+      "types": "./dist/icons/16/solid/all.d.ts",
+      "default": "./dist/icons/16/solid/all.js",
+      "import": "./dist/icons/16/solid/all.js",
+      "require": "./dist/icons/16/solid/all.js"
+    },
+    "./src/icons/16/solid/all.js": {
+      "types": "./dist/icons/16/solid/all.d.ts",
+      "default": "./dist/icons/16/solid/all.js",
+      "import": "./dist/icons/16/solid/all.js",
+      "require": "./dist/icons/16/solid/all.js"
+    },
+    "./icons/16/all": {
+      "types": "./dist/icons/16/all.d.ts",
+      "default": "./dist/icons/16/all.js",
+      "import": "./dist/icons/16/all.js",
+      "require": "./dist/icons/16/all.js"
+    },
+    "./icons/16/all.js": {
+      "types": "./dist/icons/16/all.d.ts",
+      "default": "./dist/icons/16/all.js",
+      "import": "./dist/icons/16/all.js",
+      "require": "./dist/icons/16/all.js"
+    },
+    "./src/icons/16/all": {
+      "types": "./dist/icons/16/all.d.ts",
+      "default": "./dist/icons/16/all.js",
+      "import": "./dist/icons/16/all.js",
+      "require": "./dist/icons/16/all.js"
+    },
+    "./src/icons/16/all.js": {
+      "types": "./dist/icons/16/all.d.ts",
+      "default": "./dist/icons/16/all.js",
+      "import": "./dist/icons/16/all.js",
+      "require": "./dist/icons/16/all.js"
+    },
+    "./icons/20/solid/all": {
+      "types": "./dist/icons/20/solid/all.d.ts",
+      "default": "./dist/icons/20/solid/all.js",
+      "import": "./dist/icons/20/solid/all.js",
+      "require": "./dist/icons/20/solid/all.js"
+    },
+    "./icons/20/solid/all.js": {
+      "types": "./dist/icons/20/solid/all.d.ts",
+      "default": "./dist/icons/20/solid/all.js",
+      "import": "./dist/icons/20/solid/all.js",
+      "require": "./dist/icons/20/solid/all.js"
+    },
+    "./src/icons/20/solid/all": {
+      "types": "./dist/icons/20/solid/all.d.ts",
+      "default": "./dist/icons/20/solid/all.js",
+      "import": "./dist/icons/20/solid/all.js",
+      "require": "./dist/icons/20/solid/all.js"
+    },
+    "./src/icons/20/solid/all.js": {
+      "types": "./dist/icons/20/solid/all.d.ts",
+      "default": "./dist/icons/20/solid/all.js",
+      "import": "./dist/icons/20/solid/all.js",
+      "require": "./dist/icons/20/solid/all.js"
+    },
+    "./icons/20/all": {
+      "types": "./dist/icons/20/all.d.ts",
+      "default": "./dist/icons/20/all.js",
+      "import": "./dist/icons/20/all.js",
+      "require": "./dist/icons/20/all.js"
+    },
+    "./icons/20/all.js": {
+      "types": "./dist/icons/20/all.d.ts",
+      "default": "./dist/icons/20/all.js",
+      "import": "./dist/icons/20/all.js",
+      "require": "./dist/icons/20/all.js"
+    },
+    "./src/icons/20/all": {
+      "types": "./dist/icons/20/all.d.ts",
+      "default": "./dist/icons/20/all.js",
+      "import": "./dist/icons/20/all.js",
+      "require": "./dist/icons/20/all.js"
+    },
+    "./src/icons/20/all.js": {
+      "types": "./dist/icons/20/all.d.ts",
+      "default": "./dist/icons/20/all.js",
+      "import": "./dist/icons/20/all.js",
+      "require": "./dist/icons/20/all.js"
+    },
+    "./icons/24/outline/all": {
+      "types": "./dist/icons/24/outline/all.d.ts",
+      "default": "./dist/icons/24/outline/all.js",
+      "import": "./dist/icons/24/outline/all.js",
+      "require": "./dist/icons/24/outline/all.js"
+    },
+    "./icons/24/outline/all.js": {
+      "types": "./dist/icons/24/outline/all.d.ts",
+      "default": "./dist/icons/24/outline/all.js",
+      "import": "./dist/icons/24/outline/all.js",
+      "require": "./dist/icons/24/outline/all.js"
+    },
+    "./src/icons/24/outline/all": {
+      "types": "./dist/icons/24/outline/all.d.ts",
+      "default": "./dist/icons/24/outline/all.js",
+      "import": "./dist/icons/24/outline/all.js",
+      "require": "./dist/icons/24/outline/all.js"
+    },
+    "./src/icons/24/outline/all.js": {
+      "types": "./dist/icons/24/outline/all.d.ts",
+      "default": "./dist/icons/24/outline/all.js",
+      "import": "./dist/icons/24/outline/all.js",
+      "require": "./dist/icons/24/outline/all.js"
+    },
+    "./icons/24/all": {
+      "types": "./dist/icons/24/all.d.ts",
+      "default": "./dist/icons/24/all.js",
+      "import": "./dist/icons/24/all.js",
+      "require": "./dist/icons/24/all.js"
+    },
+    "./icons/24/all.js": {
+      "types": "./dist/icons/24/all.d.ts",
+      "default": "./dist/icons/24/all.js",
+      "import": "./dist/icons/24/all.js",
+      "require": "./dist/icons/24/all.js"
+    },
+    "./src/icons/24/all": {
+      "types": "./dist/icons/24/all.d.ts",
+      "default": "./dist/icons/24/all.js",
+      "import": "./dist/icons/24/all.js",
+      "require": "./dist/icons/24/all.js"
+    },
+    "./src/icons/24/all.js": {
+      "types": "./dist/icons/24/all.d.ts",
+      "default": "./dist/icons/24/all.js",
+      "import": "./dist/icons/24/all.js",
+      "require": "./dist/icons/24/all.js"
+    },
+    "./icons/24/solid/all": {
+      "types": "./dist/icons/24/solid/all.d.ts",
+      "default": "./dist/icons/24/solid/all.js",
+      "import": "./dist/icons/24/solid/all.js",
+      "require": "./dist/icons/24/solid/all.js"
+    },
+    "./icons/24/solid/all.js": {
+      "types": "./dist/icons/24/solid/all.d.ts",
+      "default": "./dist/icons/24/solid/all.js",
+      "import": "./dist/icons/24/solid/all.js",
+      "require": "./dist/icons/24/solid/all.js"
+    },
+    "./src/icons/24/solid/all": {
+      "types": "./dist/icons/24/solid/all.d.ts",
+      "default": "./dist/icons/24/solid/all.js",
+      "import": "./dist/icons/24/solid/all.js",
+      "require": "./dist/icons/24/solid/all.js"
+    },
+    "./src/icons/24/solid/all.js": {
+      "types": "./dist/icons/24/solid/all.d.ts",
+      "default": "./dist/icons/24/solid/all.js",
+      "import": "./dist/icons/24/solid/all.js",
+      "require": "./dist/icons/24/solid/all.js"
+    },
+    "./icons/all": {
+      "types": "./dist/icons/all.d.ts",
+      "default": "./dist/icons/all.js",
+      "import": "./dist/icons/all.js",
+      "require": "./dist/icons/all.js"
+    },
+    "./icons/all.js": {
+      "types": "./dist/icons/all.d.ts",
+      "default": "./dist/icons/all.js",
+      "import": "./dist/icons/all.js",
+      "require": "./dist/icons/all.js"
+    },
+    "./src/icons/all": {
+      "types": "./dist/icons/all.d.ts",
+      "default": "./dist/icons/all.js",
+      "import": "./dist/icons/all.js",
+      "require": "./dist/icons/all.js"
+    },
+    "./src/icons/all.js": {
+      "types": "./dist/icons/all.d.ts",
+      "default": "./dist/icons/all.js",
+      "import": "./dist/icons/all.js",
+      "require": "./dist/icons/all.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fluixi/icons.git",
+    "directory": "packages/icons/icon-heroicons"
+  }
+}
