@@ -1,0 +1,26 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
+  "changelog": "@changesets/cli/changelog",
+  "commit": false,
+  "fixed": [
+    [
+      "@fluixi/icon-fontawesome",
+      "@fluixi/icon-heroicons",
+      "@fluixi/icon-lucide",
+      "@fluixi/icon-material-design",
+      "@fluixi/icon-remix",
+      "@fluixi/icon-tabler",
+      "@fluixi/icon-phosphor",
+      "@fluixi/icon-bootstrap",
+      "@fluixi/icon-iconoir",
+      "@fluixi/icon-internal",
+      "@fluixi/icons",
+      "@fluixi/icons-jsx"
+    ]
+  ],
+  "linked": [],
+  "access": "public",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "ignore": []
+}

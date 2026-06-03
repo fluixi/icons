@@ -1,0 +1,18 @@
+{
+    "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+    "version": "independent",
+    "npmClient": "pnpm",
+    "packages": [
+        "packages/**",
+        "!packages/@fluixi/lit-icon-lib"
+    ],
+    "command": {
+        "version": {
+            "message": "chore(release): publish %s",
+            "conventionalCommits": true
+        },
+        "publish": {
+            "registry": "https://npm.pkg.github.com/"
+        }
+    }
+}

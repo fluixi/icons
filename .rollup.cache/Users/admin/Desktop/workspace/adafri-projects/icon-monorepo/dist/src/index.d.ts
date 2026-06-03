@@ -1,0 +1,23 @@
+import Icons from './icons/index.js';
+export type { RiArrowsName } from './icons/index.js';
+export type { RiBuildingsName } from './icons/index.js';
+export type { RiBusinessName } from './icons/index.js';
+export type { RiCommunicationName } from './icons/index.js';
+export type { RiDesignName } from './icons/index.js';
+export type { RiDevelopmentName } from './icons/index.js';
+export type { RiDeviceName } from './icons/index.js';
+export type { RiDocumentName } from './icons/index.js';
+export type { RiEditorName } from './icons/index.js';
+export type { RiFinanceName } from './icons/index.js';
+export type { RiFoodName } from './icons/index.js';
+export type { RiHealthMedicalName } from './icons/index.js';
+export type { RiLogosName } from './icons/index.js';
+export type { RiMapName } from './icons/index.js';
+export type { RiMediaName } from './icons/index.js';
+export type { RiOthersName } from './icons/index.js';
+export type { RiSystemName } from './icons/index.js';
+export type { RiUserFacesName } from './icons/index.js';
+export type { RiWeatherName } from './icons/index.js';
+export default Icons;
+export { Icons };
+//# sourceMappingURL=index.d.ts.map

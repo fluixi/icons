@@ -1,0 +1,262 @@
+{
+  "name": "@fluixi/icons",
+  "description": "SVG icon strings, sprites, registries and CDN bundles for all icon sets",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./all/sprite.svg": "./dist/all/sprite.svg",
+    "./all/manifest.json": "./dist/all/manifest.json",
+    "./all/registry": "./dist/all/registry.js",
+    "./all/cdn": "./dist/all/registry.js",
+    "./lucide/sprite.svg": "./dist/lucide/sprite.svg",
+    "./lucide/manifest.json": "./dist/lucide/manifest.json",
+    "./lucide/registry": "./dist/lucide/registry.js",
+    "./lucide/cdn": "./dist/lucide/registry.js",
+    "./lucide": {
+      "types": "./dist/lucide/index.d.ts",
+      "import": "./dist/lucide/index.js"
+    },
+    "./lucide/*": {
+      "types": "./dist/lucide/*.d.ts",
+      "import": "./dist/lucide/*.js"
+    },
+    "./tabler/sprite.svg": "./dist/tabler/sprite.svg",
+    "./tabler/manifest.json": "./dist/tabler/manifest.json",
+    "./tabler/registry": "./dist/tabler/registry.js",
+    "./tabler/cdn": "./dist/tabler/registry.js",
+    "./tabler": {
+      "types": "./dist/tabler/index.d.ts",
+      "import": "./dist/tabler/index.js"
+    },
+    "./tabler/filled": {
+      "types": "./dist/tabler/filled/index.d.ts",
+      "import": "./dist/tabler/filled/index.js"
+    },
+    "./tabler/outline": {
+      "types": "./dist/tabler/outline/index.d.ts",
+      "import": "./dist/tabler/outline/index.js"
+    },
+    "./tabler/*": {
+      "types": "./dist/tabler/*.d.ts",
+      "import": "./dist/tabler/*.js"
+    },
+    "./heroicons/sprite.svg": "./dist/heroicons/sprite.svg",
+    "./heroicons/manifest.json": "./dist/heroicons/manifest.json",
+    "./heroicons/registry": "./dist/heroicons/registry.js",
+    "./heroicons/cdn": "./dist/heroicons/registry.js",
+    "./heroicons": {
+      "types": "./dist/heroicons/index.d.ts",
+      "import": "./dist/heroicons/index.js"
+    },
+    "./heroicons/24/outline": {
+      "types": "./dist/heroicons/24/outline/index.d.ts",
+      "import": "./dist/heroicons/24/outline/index.js"
+    },
+    "./heroicons/24/solid": {
+      "types": "./dist/heroicons/24/solid/index.d.ts",
+      "import": "./dist/heroicons/24/solid/index.js"
+    },
+    "./heroicons/16/solid": {
+      "types": "./dist/heroicons/16/solid/index.d.ts",
+      "import": "./dist/heroicons/16/solid/index.js"
+    },
+    "./heroicons/20/solid": {
+      "types": "./dist/heroicons/20/solid/index.d.ts",
+      "import": "./dist/heroicons/20/solid/index.js"
+    },
+    "./heroicons/*": {
+      "types": "./dist/heroicons/*.d.ts",
+      "import": "./dist/heroicons/*.js"
+    },
+    "./font-awesome/sprite.svg": "./dist/font-awesome/sprite.svg",
+    "./font-awesome/manifest.json": "./dist/font-awesome/manifest.json",
+    "./font-awesome/registry": "./dist/font-awesome/registry.js",
+    "./font-awesome/cdn": "./dist/font-awesome/registry.js",
+    "./font-awesome": {
+      "types": "./dist/font-awesome/index.d.ts",
+      "import": "./dist/font-awesome/index.js"
+    },
+    "./font-awesome/solid": {
+      "types": "./dist/font-awesome/solid/index.d.ts",
+      "import": "./dist/font-awesome/solid/index.js"
+    },
+    "./font-awesome/regular": {
+      "types": "./dist/font-awesome/regular/index.d.ts",
+      "import": "./dist/font-awesome/regular/index.js"
+    },
+    "./font-awesome/brands": {
+      "types": "./dist/font-awesome/brands/index.d.ts",
+      "import": "./dist/font-awesome/brands/index.js"
+    },
+    "./font-awesome/*": {
+      "types": "./dist/font-awesome/*.d.ts",
+      "import": "./dist/font-awesome/*.js"
+    },
+    "./material-design/sprite.svg": "./dist/material-design/sprite.svg",
+    "./material-design/manifest.json": "./dist/material-design/manifest.json",
+    "./material-design/registry": "./dist/material-design/registry.js",
+    "./material-design/cdn": "./dist/material-design/registry.js",
+    "./material-design": {
+      "types": "./dist/material-design/index.d.ts",
+      "import": "./dist/material-design/index.js"
+    },
+    "./material-design/filled": {
+      "types": "./dist/material-design/filled/index.d.ts",
+      "import": "./dist/material-design/filled/index.js"
+    },
+    "./material-design/outlined": {
+      "types": "./dist/material-design/outlined/index.d.ts",
+      "import": "./dist/material-design/outlined/index.js"
+    },
+    "./material-design/round": {
+      "types": "./dist/material-design/round/index.d.ts",
+      "import": "./dist/material-design/round/index.js"
+    },
+    "./material-design/sharp": {
+      "types": "./dist/material-design/sharp/index.d.ts",
+      "import": "./dist/material-design/sharp/index.js"
+    },
+    "./material-design/two-tone": {
+      "types": "./dist/material-design/two-tone/index.d.ts",
+      "import": "./dist/material-design/two-tone/index.js"
+    },
+    "./material-design/*": {
+      "types": "./dist/material-design/*.d.ts",
+      "import": "./dist/material-design/*.js"
+    },
+    "./remix/sprite.svg": "./dist/remix/sprite.svg",
+    "./remix/manifest.json": "./dist/remix/manifest.json",
+    "./remix/registry": "./dist/remix/registry.js",
+    "./remix/cdn": "./dist/remix/registry.js",
+    "./remix": {
+      "types": "./dist/remix/index.d.ts",
+      "import": "./dist/remix/index.js"
+    },
+    "./remix/*": {
+      "types": "./dist/remix/*.d.ts",
+      "import": "./dist/remix/*.js"
+    },
+    "./phosphor/sprite.svg": "./dist/phosphor/sprite.svg",
+    "./phosphor/manifest.json": "./dist/phosphor/manifest.json",
+    "./phosphor/registry": "./dist/phosphor/registry.js",
+    "./phosphor/cdn": "./dist/phosphor/registry.js",
+    "./phosphor": {
+      "types": "./dist/phosphor/index.d.ts",
+      "import": "./dist/phosphor/index.js"
+    },
+    "./phosphor/regular": {
+      "types": "./dist/phosphor/regular/index.d.ts",
+      "import": "./dist/phosphor/regular/index.js"
+    },
+    "./phosphor/fill": {
+      "types": "./dist/phosphor/fill/index.d.ts",
+      "import": "./dist/phosphor/fill/index.js"
+    },
+    "./phosphor/bold": {
+      "types": "./dist/phosphor/bold/index.d.ts",
+      "import": "./dist/phosphor/bold/index.js"
+    },
+    "./phosphor/light": {
+      "types": "./dist/phosphor/light/index.d.ts",
+      "import": "./dist/phosphor/light/index.js"
+    },
+    "./phosphor/thin": {
+      "types": "./dist/phosphor/thin/index.d.ts",
+      "import": "./dist/phosphor/thin/index.js"
+    },
+    "./phosphor/duotone": {
+      "types": "./dist/phosphor/duotone/index.d.ts",
+      "import": "./dist/phosphor/duotone/index.js"
+    },
+    "./phosphor/*": {
+      "types": "./dist/phosphor/*.d.ts",
+      "import": "./dist/phosphor/*.js"
+    },
+    "./bootstrap/sprite.svg": "./dist/bootstrap/sprite.svg",
+    "./bootstrap/manifest.json": "./dist/bootstrap/manifest.json",
+    "./bootstrap/registry": "./dist/bootstrap/registry.js",
+    "./bootstrap/cdn": "./dist/bootstrap/registry.js",
+    "./bootstrap": {
+      "types": "./dist/bootstrap/index.d.ts",
+      "import": "./dist/bootstrap/index.js"
+    },
+    "./bootstrap/*": {
+      "types": "./dist/bootstrap/*.d.ts",
+      "import": "./dist/bootstrap/*.js"
+    },
+    "./iconoir/sprite.svg": "./dist/iconoir/sprite.svg",
+    "./iconoir/manifest.json": "./dist/iconoir/manifest.json",
+    "./iconoir/registry": "./dist/iconoir/registry.js",
+    "./iconoir/cdn": "./dist/iconoir/registry.js",
+    "./iconoir": {
+      "types": "./dist/iconoir/index.d.ts",
+      "import": "./dist/iconoir/index.js"
+    },
+    "./iconoir/regular": {
+      "types": "./dist/iconoir/regular/index.d.ts",
+      "import": "./dist/iconoir/regular/index.js"
+    },
+    "./iconoir/solid": {
+      "types": "./dist/iconoir/solid/index.d.ts",
+      "import": "./dist/iconoir/solid/index.js"
+    },
+    "./iconoir/*": {
+      "types": "./dist/iconoir/*.d.ts",
+      "import": "./dist/iconoir/*.js"
+    },
+    "./internal": {
+      "types": "./dist/internal/index.d.ts",
+      "import": "./dist/internal/index.js"
+    },
+    "./internal/filled": {
+      "types": "./dist/internal/filled/index.d.ts",
+      "import": "./dist/internal/filled/index.js"
+    },
+    "./internal/outline": {
+      "types": "./dist/internal/outline/index.d.ts",
+      "import": "./dist/internal/outline/index.js"
+    },
+    "./internal/sprite.svg": "./dist/internal/sprite.svg",
+    "./internal/manifest.json": "./dist/internal/manifest.json",
+    "./internal/registry": "./dist/internal/registry.js",
+    "./internal/cdn": "./dist/internal/registry.js",
+    "./internal/*": {
+      "types": "./dist/internal/*.d.ts",
+      "import": "./dist/internal/*.js"
+    }
+  },
+  "scripts": {
+    "build": "tsx ../../scripts/build-icons-api.ts"
+  },
+  "devDependencies": {
+    "@fluixi/icon-bootstrap": "workspace:*",
+    "@fluixi/icon-fontawesome": "workspace:*",
+    "@fluixi/icon-heroicons": "workspace:*",
+    "@fluixi/icon-iconoir": "workspace:*",
+    "@fluixi/icon-lucide": "workspace:*",
+    "@fluixi/icon-material-design": "workspace:*",
+    "@fluixi/icon-phosphor": "workspace:*",
+    "@fluixi/icon-remix": "workspace:*",
+    "@fluixi/icon-tabler": "workspace:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fluixi/icons.git",
+    "directory": "packages/icons-api"
+  }
+}

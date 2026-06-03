@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "declaration": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "lib": [
+            "ES2020",
+            "dom"
+        ],
+        "declarationMap": true,
+        "incremental": true,
+        "composite": true,
+        "strict": true,
+    },
+    "exclude": [
+        ".packages/@fluixi/**/icons"
+    ]
+  }

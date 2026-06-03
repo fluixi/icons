@@ -1,0 +1,17 @@
+0 silly argv {
+0 silly argv   _: [ 'run' ],
+0 silly argv   stream: true,
+0 silly argv   lernaVersion: '7.4.2',
+0 silly argv   '$0': 'node_modules/lerna/dist/cli.js',
+0 silly argv   script: 'build'
+0 silly argv }
+1 notice cli v7.4.2
+2 verbose packageConfigs Explicit "packages" configuration found in lerna.json. Resolving packages using the configured glob(s): ["packages/**","!packages/@adafri/lit-icon-lib"]
+3 verbose rootPath /Users/admin/Desktop/workspace/adafri-projects/icon-monorepo
+4 error Error: GenericFailure
+4 error     at getNxWorkspaceFilesFromContext (/Users/admin/Desktop/workspace/adafri-projects/icon-monorepo/node_modules/.pnpm/nx@16.10.0/node_modules/nx/src/utils/workspace-context.js:16:29)
+4 error     at retrieveWorkspaceFiles (/Users/admin/Desktop/workspace/adafri-projects/icon-monorepo/node_modules/.pnpm/nx@16.10.0/node_modules/nx/src/project-graph/utils/retrieve-workspace-files.js:26:138)
+4 error     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+4 error     at async buildProjectGraphWithoutDaemon (/Users/admin/Desktop/workspace/adafri-projects/icon-monorepo/node_modules/.pnpm/nx@16.10.0/node_modules/nx/src/project-graph/project-graph.js:65:82)
+4 error     at async createProjectGraphAsync (/Users/admin/Desktop/workspace/adafri-projects/icon-monorepo/node_modules/.pnpm/nx@16.10.0/node_modules/nx/src/project-graph/project-graph.js:116:25)
+4 error     at async detectProjects (/Users/admin/Desktop/workspace/adafri-projects/icon-monorepo/node_modules/.pnpm/lerna@7.4.2_encoding@0.1.13/node_modules/lerna/dist/index.js:1455:25)

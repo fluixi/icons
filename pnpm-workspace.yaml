@@ -1,0 +1,6 @@
+packages:
+  - "packages/*"
+  - "packages/icons/*"
+  - "packages/icons-api"
+  - "packages/icons-jsx"
+  - "!packages/@fluixi/lit-icon-lib/*"
