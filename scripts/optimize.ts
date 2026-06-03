@@ -1,4 +1,4 @@
-import {optimize} from "SVGO";
+import {optimize} from "svgo";
 // const SIZE_MAP = {
 //     "16": "1em",
 //     "20": "1.25em",
