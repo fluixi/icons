@@ -1,4 +1,21 @@
-# @fluixi/icons-jsx
+<div align="center">
+  <a href="https://fluixi.dev" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/fluixi/assets/main/logos/512x512.png" alt="Fluixi" width="128" height="128" />
+  </a>
+
+  <h1>@fluixi/icons-jsx</h1>
+
+  <p><strong>Tree-shakeable JSX icon components — one file per icon, no React dependency.</strong></p>
+
+  <p>
+    <a href="./LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-22c55e.svg" /></a>
+    <img alt="TypeScript" src="https://img.shields.io/badge/types-included-3178c6?logo=typescript&logoColor=white" />
+    <img alt="Registry" src="https://img.shields.io/badge/registry-GitHub%20Packages-181717?logo=github" />
+    <img alt="JSX" src="https://img.shields.io/badge/JSX-React%20%7C%20Preact%20%7C%20Solid-61dafb?logo=react&logoColor=black" />
+  </p>
+</div>
+
+---
 
 Tree-shakeable **JSX icon components** for all icon sets — **one file per icon**,
 **no React dependency**, pure JSX. No CDN, no web-component registry, no Lit runtime.

@@ -1,4 +1,21 @@
-# @fluixi/icons
+<div align="center">
+  <a href="https://fluixi.dev" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/fluixi/assets/main/logos/512x512.png" alt="Fluixi" width="128" height="128" />
+  </a>
+
+  <h1>@fluixi/icons</h1>
+
+  <p><strong>SVG icon strings, sprites, registries and CDN bundles for every icon set.</strong></p>
+
+  <p>
+    <a href="./LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-22c55e.svg" /></a>
+    <img alt="TypeScript" src="https://img.shields.io/badge/types-included-3178c6?logo=typescript&logoColor=white" />
+    <img alt="Registry" src="https://img.shields.io/badge/registry-GitHub%20Packages-181717?logo=github" />
+    <img alt="Tree-shakeable" src="https://img.shields.io/badge/tree--shakeable-yes-brightgreen" />
+  </p>
+</div>
+
+---
 
 SVG icon library with **9 icon sets**, **48 000+ icons**, available as:
 

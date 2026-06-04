@@ -1,4 +1,21 @@
-# fluixi icons
+<div align="center">
+  <a href="https://fluixi.dev" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/fluixi/assets/main/logos/512x512.png" alt="Fluixi" width="128" height="128" />
+  </a>
+
+  <h1>Fluixi Icons</h1>
+
+  <p><strong>9 icon sets · 48,000+ icons · SVG strings, JSX components, sprites & CDN bundles.</strong></p>
+
+  <p>
+    <a href="./LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-22c55e.svg" /></a>
+    <img alt="Icons" src="https://img.shields.io/badge/icons-48%2C000%2B-ec4899" />
+    <img alt="Registry" src="https://img.shields.io/badge/registry-GitHub%20Packages-181717?logo=github" />
+    <img alt="Sets" src="https://img.shields.io/badge/icon%20sets-9-8b5cf6" />
+  </p>
+</div>
+
+---
 
 Monorepo that fetches icons from upstream projects and publishes them as
 npm packages on GitHub Packages — as raw SVG strings, JSX components, web
