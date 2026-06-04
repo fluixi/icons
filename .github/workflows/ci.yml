@@ -41,6 +41,17 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # Shares the same key as release.yml, so the ~35-min generation runs once
+      # and both workflows reuse it until the generator scripts or deps change.
+      - name: Cache generated icon modules
+        id: icons-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            packages/icons/*/src/icons
+            packages/icons/*/src/all.ts
+          key: gen-icons-v1-${{ hashFiles('scripts/**', 'pnpm-lock.yaml') }}
+
       - name: Fetch icon repos
         run: pnpm run fetch:icons
 
@@ -48,6 +59,7 @@ jobs:
         run: pnpm copy-icons
 
       - name: Generate icon modules
+        if: steps.icons-cache.outputs.cache-hit != 'true'
         run: pnpm generate
         timeout-minutes: 45
 
