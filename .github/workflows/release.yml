@@ -45,6 +45,19 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.PACKAGES_TOKEN || secrets.GITHUB_TOKEN }}
 
+      # The `generate` step takes ~35 min; everything else here is seconds.
+      # Cache its output (the generated TS modules) keyed on the generator
+      # scripts + lockfile, so we only pay that cost when the generators change.
+      # To force a fresh upstream re-fetch, bump the `v1` in the key below.
+      - name: Cache generated icon modules
+        id: icons-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            packages/icons/*/src/icons
+            packages/icons/*/src/all.ts
+          key: gen-icons-v1-${{ hashFiles('scripts/**', 'pnpm-lock.yaml') }}
+
       - name: Fetch icon repos
         run: pnpm run fetch:icons
 
@@ -52,6 +65,7 @@ jobs:
         run: pnpm copy-icons
 
       - name: Generate icon modules
+        if: steps.icons-cache.outputs.cache-hit != 'true'
         run: pnpm generate
         timeout-minutes: 45
 
