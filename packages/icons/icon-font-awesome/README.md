@@ -1,17 +1,15 @@
-<div align="center">
-  <img src="https://raw.githubusercontent.com/fluixi/assets/main/logos/512x512.png" alt="Fluixi" width="120" height="120" />
+<p align="center">
+  <img src="https://raw.githubusercontent.com/fluixi/assets/main/logos/128x128.png" alt="Fluixi" width="120" height="120" />
+</p>
 
-  <h1>@fluixi/icon-fontawesome</h1>
+# @fluixi/icon-fontawesome
 
-  <p><strong>Font Awesome Free as SVG data for the Fluixi icon system — 2,900+ icons.</strong></p>
+**Font Awesome Free as SVG data for the Fluixi icon system — 2,900+ icons.**
 
-  <p>
-    <a href="./LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-22c55e.svg" /></a>
-    <img alt="Icon license" src="https://img.shields.io/badge/icons-CC--BY%204.0-8b5cf6" />
-    <img alt="Icons" src="https://img.shields.io/badge/icons-2%2C900%2B-ec4899" />
-    <img alt="Registry" src="https://img.shields.io/badge/registry-GitHub%20Packages-181717?logo=github" />
-  </p>
-</div>
+[![License: MIT](https://img.shields.io/badge/License-MIT-22c55e.svg)](./LICENSE)
+![Icon license](https://img.shields.io/badge/icons-CC--BY%204.0-8b5cf6)
+![Icons](https://img.shields.io/badge/icons-2%2C900%2B-ec4899)
+![Registry](https://img.shields.io/badge/registry-GitHub%20Packages-181717?logo=github)
 
 ---
 
