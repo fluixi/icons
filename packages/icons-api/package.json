@@ -1,7 +1,7 @@
 {
   "name": "@fluixi/icons",
   "description": "SVG icon strings, sprites, registries and CDN bundles for all icon sets",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "private": false,
   "type": "module",
