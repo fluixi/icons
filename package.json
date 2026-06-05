@@ -13,12 +13,12 @@
     "build:ts":      "tsx scripts/build-ts.ts",
     "build:api":     "tsx scripts/build-icons-api.ts",
     "build:jsx":     "tsx scripts/build-icons-jsx.ts",
-    "build":         "pnpm run build:ts && pnpm run build:api && pnpm run build:jsx",
+    "build":         "pnpm run build:ts && pnpm run bundle && pnpm run build:api && pnpm run build:jsx",
     "format":        "prettier --write \"**/*.{ts,js,json,md}\" --ignore-path .gitignore",
     "format:check":  "prettier --check \"**/*.{ts,js,json,md}\" --ignore-path .gitignore",
     "changeset":     "changeset",
     "version":       "changeset version",
-    "release":       "pnpm run build && pnpm run sprites && pnpm run bundle && changeset publish"
+    "release":       "pnpm run build && pnpm run sprites && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli":              "^2.31.0",
