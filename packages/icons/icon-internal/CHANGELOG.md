@@ -1,5 +1,7 @@
 # @fluixi/icon-internal
 
+## 0.0.3
+
 ## 0.0.2
 
 ### Patch Changes

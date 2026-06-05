@@ -1,7 +1,7 @@
 {
   "name": "@fluixi/icons-jsx",
   "description": "Tree-shakeable JSX icon components — one file per icon, no React dependency, pure JSX",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "private": false,
   "type": "module",

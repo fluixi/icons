@@ -1,7 +1,7 @@
 {
   "name": "@fluixi/icon-bootstrap",
   "description": "Bootstrap Icons SVG data",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "private": false,
   "publishConfig": {
