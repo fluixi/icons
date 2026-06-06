@@ -56,7 +56,7 @@ jobs:
           path: |
             packages/icons/*/src/icons
             packages/icons/*/src/all.ts
-          key: gen-icons-v1-${{ hashFiles('scripts/**', 'pnpm-lock.yaml') }}
+          key: gen-icons-v2-${{ hashFiles('scripts/**', 'pnpm-lock.yaml') }}
 
       - name: Fetch icon repos
         run: pnpm run fetch:icons
