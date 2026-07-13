@@ -1,8 +1,8 @@
 /**
  * build-icons-api.ts
  *
- * Assembles the @fluixi/icons umbrella package from the individual
- * @fluixi/icon-* packages. For each library it produces:
+ * Assembles the @fluixi-icons/icons umbrella package from the individual
+ * @fluixi-icons/icon-* packages. For each library it produces:
  *
  *   dist/{lib}/index.js      — named SVG string exports (tree-shakeable)
  *   dist/{lib}/index.d.ts    — TypeScript declarations
@@ -18,10 +18,10 @@
  *                              (the ./all/cdn export aliases this same file)
  *
  * Usage:
- *   import { LuActivity }       from '@fluixi/icons/lucide'
- *   import { TrAccessible }     from '@fluixi/icons/tabler/filled'
- *   import spriteUrl            from '@fluixi/icons/lucide/sprite.svg'
- *   import '@fluixi/icons/lucide/registry'   // self-registers web components
+ *   import { LuActivity }       from '@fluixi-icons/icons/lucide'
+ *   import { TrAccessible }     from '@fluixi-icons/icons/tabler/filled'
+ *   import spriteUrl            from '@fluixi-icons/icons/lucide/sprite.svg'
+ *   import '@fluixi-icons/icons/lucide/registry'   // self-registers web components
  */
 
 import fs from "node:fs";
@@ -181,7 +181,7 @@ function collectExports(iconsDir: string, subDir: string): IconEntry[] {
 }
 
 /**
- * Write one file per icon plus a barrel index — same layout as @fluixi/icons-jsx.
+ * Write one file per icon plus a barrel index — same layout as @fluixi-icons/icons-jsx.
  *   {apiDir}/{slug}.js     → export const Name = "<svg…>"; export default Name
  *   {apiDir}/{slug}.d.ts   → declare const Name: string; …
  *   {apiDir}/index.js      → re-export barrel
@@ -243,7 +243,7 @@ for (const set of activeSets) {
   // ── Top-level barrel ───────────────────────────────────────────────────────
   // For multi-variant sets (tabler, heroicons, …) the top-level route is empty,
   // so synthesize a barrel that re-exports every built variant barrel. This
-  // makes `import { TrAccessible } from '@fluixi/icons/tabler'` work.
+  // makes `import { TrAccessible } from '@fluixi-icons/icons/tabler'` work.
   const topDirHasOwnIcons = builtRoutes.includes(topApi);
   if (!topDirHasOwnIcons && builtRoutes.length > 0) {
     const rel = (r: string) => "./" + path.relative(topApi, r).split(path.sep).join("/");
@@ -301,4 +301,4 @@ const fullCdnSrc = path.join(CDN, "fluixi-icons-all.js");
 copyFile(fullCdnSrc, path.join(API_DIST, "all", "registry.js"));
 if (fs.existsSync(fullCdnSrc)) console.log(`  ✓ all/registry.js`);
 
-console.log(`\n✅ @fluixi/icons built — output: ${path.relative(ROOT, API_DIST)}/`);
+console.log(`\n✅ @fluixi-icons/icons built — output: ${path.relative(ROOT, API_DIST)}/`);

@@ -1,7 +1,7 @@
 /**
  * build-icons-jsx.ts
  *
- * Builds @fluixi/icons-jsx — pure JSX, one file per icon, no React import,
+ * Builds @fluixi-icons/ui — pure JSX, one file per icon, no React import,
  * no TypeScript syntax. Works with any JSX runtime (React 17+, Preact, Solid).
  *
  * Output per icon set:
@@ -253,7 +253,7 @@ for (const set of activeSets) {
   }
 
   // Combined barrel for multi-variant sets (tabler, heroicons, …) whose
-  // top-level route is empty, so `@fluixi/icons-jsx/tabler` re-exports variants.
+  // top-level route is empty, so `@fluixi-icons/ui/tabler` re-exports variants.
   if (!builtRoutes.includes(topApi) && builtRoutes.length > 0) {
     const rel = (r: string) => "./" + path.relative(topApi, r).split(path.sep).join("/");
     const barrel = builtRoutes.map((r) => `export * from '${rel(r)}/index.js'`).join("\n");
@@ -265,12 +265,12 @@ for (const set of activeSets) {
 }
 
 // Root entry — exposes shared types only. Components are imported per set
-// (e.g. '@fluixi/icons-jsx/lucide') to keep bundles tree-shakeable.
+// (e.g. '@fluixi-icons/ui/lucide') to keep bundles tree-shakeable.
 fs.writeFileSync(path.join(JSX_DIST, "index.js"), "export {}\n");
 fs.writeFileSync(
   path.join(JSX_DIST, "index.d.ts"),
   `export type { IconProps, IconElement } from './types.js'\n`,
 );
 
-console.log(`\n✅ @fluixi/icons-jsx built — ${totalIcons} components`);
+console.log(`\n✅ @fluixi-icons/ui built — ${totalIcons} components`);
 console.log(`   Output: ${path.relative(ROOT, JSX_DIST)}/`);

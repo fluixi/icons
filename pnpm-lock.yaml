@@ -62,31 +62,31 @@ importers:
 
   packages/icons-api:
     devDependencies:
-      '@fluixi/icon-bootstrap':
+      '@fluixi-icons/icon-bootstrap':
         specifier: workspace:*
         version: link:../icons/icon-bootstrap
-      '@fluixi/icon-fontawesome':
+      '@fluixi-icons/icon-fontawesome':
         specifier: workspace:*
         version: link:../icons/icon-font-awesome
-      '@fluixi/icon-heroicons':
+      '@fluixi-icons/icon-heroicons':
         specifier: workspace:*
         version: link:../icons/icon-heroicons
-      '@fluixi/icon-iconoir':
+      '@fluixi-icons/icon-iconoir':
         specifier: workspace:*
         version: link:../icons/icon-iconoir
-      '@fluixi/icon-lucide':
+      '@fluixi-icons/icon-lucide':
         specifier: workspace:*
         version: link:../icons/icon-lucide
-      '@fluixi/icon-material-design':
+      '@fluixi-icons/icon-material-design':
         specifier: workspace:*
         version: link:../icons/icon-material-design
-      '@fluixi/icon-phosphor':
+      '@fluixi-icons/icon-phosphor':
         specifier: workspace:*
         version: link:../icons/icon-phosphor
-      '@fluixi/icon-remix':
+      '@fluixi-icons/icon-remix':
         specifier: workspace:*
         version: link:../icons/icon-remix
-      '@fluixi/icon-tabler':
+      '@fluixi-icons/icon-tabler':
         specifier: workspace:*
         version: link:../icons/icon-tabler
 
@@ -581,6 +581,7 @@ packages:
   '@xmldom/xmldom@0.8.11':
     resolution: {integrity: sha512-cQzWCtO6C8TQiYl1ruKNn2U6Ao4o4WBBcbL61yJl84x+j5sOWWFU9X7DpND8XZG3daDppSsigMdfAIl2upQBRw==}
     engines: {node: '>=10.0.0'}
+    deprecated: this version has critical issues, please update to the latest version
 
   acorn@8.15.0:
     resolution: {integrity: sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg==}

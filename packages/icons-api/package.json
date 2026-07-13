@@ -1,9 +1,9 @@
 {
-  "name": "@fluixi/icons",
+  "name": "@fluixi-icons/icons",
   "description": "SVG icon strings, sprites, registries and CDN bundles for all icon sets",
   "version": "0.0.3",
   "license": "MIT",
-  "private": false,
+  "private": true,
   "type": "module",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -244,15 +244,15 @@
     "build": "tsx ../../scripts/build-icons-api.ts"
   },
   "devDependencies": {
-    "@fluixi/icon-bootstrap": "workspace:*",
-    "@fluixi/icon-fontawesome": "workspace:*",
-    "@fluixi/icon-heroicons": "workspace:*",
-    "@fluixi/icon-iconoir": "workspace:*",
-    "@fluixi/icon-lucide": "workspace:*",
-    "@fluixi/icon-material-design": "workspace:*",
-    "@fluixi/icon-phosphor": "workspace:*",
-    "@fluixi/icon-remix": "workspace:*",
-    "@fluixi/icon-tabler": "workspace:*"
+    "@fluixi-icons/icon-bootstrap": "workspace:*",
+    "@fluixi-icons/icon-fontawesome": "workspace:*",
+    "@fluixi-icons/icon-heroicons": "workspace:*",
+    "@fluixi-icons/icon-iconoir": "workspace:*",
+    "@fluixi-icons/icon-lucide": "workspace:*",
+    "@fluixi-icons/icon-material-design": "workspace:*",
+    "@fluixi-icons/icon-phosphor": "workspace:*",
+    "@fluixi-icons/icon-remix": "workspace:*",
+    "@fluixi-icons/icon-tabler": "workspace:*"
   },
   "repository": {
     "type": "git",

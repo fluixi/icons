@@ -1,5 +1,5 @@
 {
-  "name": "@fluixi/icon-internal",
+  "name": "@fluixi-icons/icon-internal",
   "version": "0.0.3",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

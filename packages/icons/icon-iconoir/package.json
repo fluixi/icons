@@ -1,6 +1,6 @@
 {
-  "name": "@fluixi/icon-iconoir",
-  "description": "Iconoir SVG data — 1600+ icons, regular/solid",
+  "name": "@fluixi-icons/icon-iconoir",
+  "description": "Iconoir SVG data \u2014 1600+ icons, regular/solid",
   "version": "0.0.3",
   "license": "MIT",
   "private": false,

@@ -1,9 +1,9 @@
 {
-  "name": "@fluixi/icons-jsx",
-  "description": "Tree-shakeable JSX icon components — one file per icon, no React dependency, pure JSX",
+  "name": "@fluixi-icons/ui",
+  "description": "Tree-shakeable JSX icon components \u2014 one file per icon, no React dependency, pure JSX",
   "version": "0.0.3",
   "license": "MIT",
-  "private": false,
+  "private": true,
   "type": "module",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
