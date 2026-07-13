@@ -8,7 +8,6 @@ on:
 
 permissions:
   contents: read
-  packages: read
   actions: read
 
 concurrency:
@@ -33,13 +32,10 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
-          registry-url: https://npm.pkg.github.com/
-          scope: '@fluixi'
 
+      # All @fluixi packages resolve from public npm — no registry auth needed.
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Shares the same key as release.yml, so the ~35-min generation runs once
       # and both workflows reuse it until the generator scripts or deps change.

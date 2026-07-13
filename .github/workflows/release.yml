@@ -11,7 +11,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 permissions:
   contents: write
-  packages: write
+  id-token: write   # npm publish provenance (OIDC), when enabled
   pull-requests: write
 
 jobs:
@@ -33,17 +33,25 @@ jobs:
         with:
           version: 10
 
+      # NOTE: no `registry-url` here on purpose — it writes a temp .npmrc via
+      # NPM_CONFIG_USERCONFIG that authenticates npm with NODE_AUTH_TOKEN, shadowing
+      # the token the "Configure registry auth" step writes to ~/.npmrc → E404 on
+      # publish. Auth must come from ~/.npmrc. (Re-add only alongside provenance.)
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: pnpm
-          registry-url: https://npm.pkg.github.com/
-          scope: '@fluixi'
+
+      # All @fluixi packages resolve from public npm, so install needs no auth.
+      # The token is only needed to publish — write it to the user ~/.npmrc, since
+      # pnpm v10 ignores _authToken lines in a committed project .npmrc.
+      - name: Configure registry auth
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.PACKAGES_TOKEN || secrets.GITHUB_TOKEN }}
 
       # The `generate` step takes ~35 min; everything else here is seconds.
       # Cache its output (the generated TS modules) keyed on the generator
@@ -81,8 +89,10 @@ jobs:
           title: 'chore: version packages'
           commit: 'chore: version packages'
         env:
+          # GITHUB_TOKEN / PACKAGES_TOKEN: git ops + opening the "Version Packages" PR.
           GITHUB_TOKEN: ${{ secrets.PACKAGES_TOKEN || secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.PACKAGES_TOKEN || secrets.GITHUB_TOKEN }}
+          # NPM_TOKEN: publishes @fluixi/* to public npm (registry from publishConfig).
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   # notify-flx-icon:
   #   name: Trigger flx-icon update
