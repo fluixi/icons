@@ -1,7 +1,7 @@
 {
   "name": "@fluixi-icons/icon-phosphor",
-  "description": "Phosphor Icons SVG data \u2014 9000+ icons, 6 weights",
-  "version": "0.0.3",
+  "description": "Phosphor Icons SVG data — 9000+ icons, 6 weights",
+  "version": "0.0.4",
   "license": "MIT",
   "private": false,
   "publishConfig": {
