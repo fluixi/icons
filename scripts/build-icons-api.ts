@@ -181,36 +181,30 @@ function collectExports(iconsDir: string, subDir: string): IconEntry[] {
 }
 
 /**
- * Write one file per icon plus a barrel index — same layout as @fluixi-icons/icons-jsx.
- *   {apiDir}/{slug}.js     → export const Name = "<svg…>"; export default Name
- *   {apiDir}/{slug}.d.ts   → declare const Name: string; …
- *   {apiDir}/index.js      → re-export barrel
- *   {apiDir}/index.d.ts
+ * Write ONE bundled module per route — all of a route's icons as named string
+ * exports in a single `index.js`, plus its `.d.ts`. Bundlers tree-shake unused
+ * `export const`s (the package sets `sideEffects: false`), so consumers still pay
+ * only for what they import, but the package ships ~2 files per route instead of
+ * thousands (npm rejects tarballs with too many files).
+ *   {apiDir}/index.js    → export const Name = "<svg…>"; …
+ *   {apiDir}/index.d.ts  → export declare const Name: string; …
  */
 function writeIconFiles(apiDir: string, icons: IconEntry[]): void {
   fs.mkdirSync(apiDir, { recursive: true });
 
-  const barrel: string[] = [];
-  const seen = new Set<string>(); // guard against two slugs → same component name
+  const js:  string[] = [];
+  const dts: string[] = [];
+  const seen = new Set<string>(); // two slugs → same name: keep the first
 
-  for (const { name, slug, svg } of icons) {
-    write(
-      path.join(apiDir, `${slug}.js`),
-      `export const ${name} = ${JSON.stringify(svg)};\nexport default ${name};\n`,
-    );
-    write(
-      path.join(apiDir, `${slug}.d.ts`),
-      `declare const ${name}: string;\nexport default ${name};\nexport { ${name} };\n`,
-    );
-    if (seen.has(name)) continue; // skip duplicate component names in the barrel
+  for (const { name, svg } of icons) {
+    if (seen.has(name)) continue;
     seen.add(name);
-    // Single named re-export — the per-icon file already exposes both named
-    // and default, so re-exporting the name once avoids a duplicate export.
-    barrel.push(`export { ${name} } from './${slug}.js'`);
+    js.push(`export const ${name} = ${JSON.stringify(svg)};`);
+    dts.push(`export declare const ${name}: string;`);
   }
 
-  write(path.join(apiDir, "index.js"),   barrel.join("\n") + "\n");
-  write(path.join(apiDir, "index.d.ts"), barrel.join("\n") + "\n");
+  write(path.join(apiDir, "index.js"),   js.join("\n")  + "\n");
+  write(path.join(apiDir, "index.d.ts"), dts.join("\n") + "\n");
 }
 
 // ─── Main ────────────────────────────────────────────────────────────────────

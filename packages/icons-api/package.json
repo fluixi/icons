@@ -3,7 +3,6 @@
   "description": "SVG icon strings, sprites, registries and CDN bundles for all icon sets",
   "version": "0.0.3",
   "license": "MIT",
-  "private": true,
   "type": "module",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -31,10 +30,6 @@
       "types": "./dist/lucide/index.d.ts",
       "import": "./dist/lucide/index.js"
     },
-    "./lucide/*": {
-      "types": "./dist/lucide/*.d.ts",
-      "import": "./dist/lucide/*.js"
-    },
     "./tabler/sprite.svg": "./dist/tabler/sprite.svg",
     "./tabler/manifest.json": "./dist/tabler/manifest.json",
     "./tabler/registry": "./dist/tabler/registry.js",
@@ -50,10 +45,6 @@
     "./tabler/outline": {
       "types": "./dist/tabler/outline/index.d.ts",
       "import": "./dist/tabler/outline/index.js"
-    },
-    "./tabler/*": {
-      "types": "./dist/tabler/*.d.ts",
-      "import": "./dist/tabler/*.js"
     },
     "./heroicons/sprite.svg": "./dist/heroicons/sprite.svg",
     "./heroicons/manifest.json": "./dist/heroicons/manifest.json",
@@ -79,10 +70,6 @@
       "types": "./dist/heroicons/20/solid/index.d.ts",
       "import": "./dist/heroicons/20/solid/index.js"
     },
-    "./heroicons/*": {
-      "types": "./dist/heroicons/*.d.ts",
-      "import": "./dist/heroicons/*.js"
-    },
     "./font-awesome/sprite.svg": "./dist/font-awesome/sprite.svg",
     "./font-awesome/manifest.json": "./dist/font-awesome/manifest.json",
     "./font-awesome/registry": "./dist/font-awesome/registry.js",
@@ -102,10 +89,6 @@
     "./font-awesome/brands": {
       "types": "./dist/font-awesome/brands/index.d.ts",
       "import": "./dist/font-awesome/brands/index.js"
-    },
-    "./font-awesome/*": {
-      "types": "./dist/font-awesome/*.d.ts",
-      "import": "./dist/font-awesome/*.js"
     },
     "./material-design/sprite.svg": "./dist/material-design/sprite.svg",
     "./material-design/manifest.json": "./dist/material-design/manifest.json",
@@ -135,10 +118,6 @@
       "types": "./dist/material-design/two-tone/index.d.ts",
       "import": "./dist/material-design/two-tone/index.js"
     },
-    "./material-design/*": {
-      "types": "./dist/material-design/*.d.ts",
-      "import": "./dist/material-design/*.js"
-    },
     "./remix/sprite.svg": "./dist/remix/sprite.svg",
     "./remix/manifest.json": "./dist/remix/manifest.json",
     "./remix/registry": "./dist/remix/registry.js",
@@ -146,10 +125,6 @@
     "./remix": {
       "types": "./dist/remix/index.d.ts",
       "import": "./dist/remix/index.js"
-    },
-    "./remix/*": {
-      "types": "./dist/remix/*.d.ts",
-      "import": "./dist/remix/*.js"
     },
     "./phosphor/sprite.svg": "./dist/phosphor/sprite.svg",
     "./phosphor/manifest.json": "./dist/phosphor/manifest.json",
@@ -183,10 +158,6 @@
       "types": "./dist/phosphor/duotone/index.d.ts",
       "import": "./dist/phosphor/duotone/index.js"
     },
-    "./phosphor/*": {
-      "types": "./dist/phosphor/*.d.ts",
-      "import": "./dist/phosphor/*.js"
-    },
     "./bootstrap/sprite.svg": "./dist/bootstrap/sprite.svg",
     "./bootstrap/manifest.json": "./dist/bootstrap/manifest.json",
     "./bootstrap/registry": "./dist/bootstrap/registry.js",
@@ -194,10 +165,6 @@
     "./bootstrap": {
       "types": "./dist/bootstrap/index.d.ts",
       "import": "./dist/bootstrap/index.js"
-    },
-    "./bootstrap/*": {
-      "types": "./dist/bootstrap/*.d.ts",
-      "import": "./dist/bootstrap/*.js"
     },
     "./iconoir/sprite.svg": "./dist/iconoir/sprite.svg",
     "./iconoir/manifest.json": "./dist/iconoir/manifest.json",
@@ -215,10 +182,6 @@
       "types": "./dist/iconoir/solid/index.d.ts",
       "import": "./dist/iconoir/solid/index.js"
     },
-    "./iconoir/*": {
-      "types": "./dist/iconoir/*.d.ts",
-      "import": "./dist/iconoir/*.js"
-    },
     "./internal": {
       "types": "./dist/internal/index.d.ts",
       "import": "./dist/internal/index.js"
@@ -234,11 +197,7 @@
     "./internal/sprite.svg": "./dist/internal/sprite.svg",
     "./internal/manifest.json": "./dist/internal/manifest.json",
     "./internal/registry": "./dist/internal/registry.js",
-    "./internal/cdn": "./dist/internal/registry.js",
-    "./internal/*": {
-      "types": "./dist/internal/*.d.ts",
-      "import": "./dist/internal/*.js"
-    }
+    "./internal/cdn": "./dist/internal/registry.js"
   },
   "scripts": {
     "build": "tsx ../../scripts/build-icons-api.ts"
@@ -258,5 +217,6 @@
     "type": "git",
     "url": "git+https://github.com/fluixi/icons.git",
     "directory": "packages/icons-api"
-  }
+  },
+  "sideEffects": false
 }

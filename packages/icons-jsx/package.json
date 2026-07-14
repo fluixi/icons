@@ -1,9 +1,8 @@
 {
   "name": "@fluixi-icons/ui",
-  "description": "Tree-shakeable JSX icon components \u2014 one file per icon, no React dependency, pure JSX",
+  "description": "Tree-shakeable JSX icon components — one file per icon, no React dependency, pure JSX",
   "version": "0.0.3",
   "license": "MIT",
-  "private": true,
   "type": "module",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -32,11 +31,7 @@
     },
     "./lucide": {
       "types": "./dist/lucide/index.d.ts",
-      "default": "./dist/lucide/index.js"
-    },
-    "./lucide/*": {
-      "types": "./dist/lucide/*.d.ts",
-      "default": "./dist/lucide/*.jsx"
+      "default": "./dist/lucide/index.jsx"
     },
     "./tabler": {
       "types": "./dist/tabler/index.d.ts",
@@ -44,23 +39,11 @@
     },
     "./tabler/filled": {
       "types": "./dist/tabler/filled/index.d.ts",
-      "default": "./dist/tabler/filled/index.js"
-    },
-    "./tabler/filled/*": {
-      "types": "./dist/tabler/filled/*.d.ts",
-      "default": "./dist/tabler/filled/*.jsx"
+      "default": "./dist/tabler/filled/index.jsx"
     },
     "./tabler/outline": {
       "types": "./dist/tabler/outline/index.d.ts",
-      "default": "./dist/tabler/outline/index.js"
-    },
-    "./tabler/outline/*": {
-      "types": "./dist/tabler/outline/*.d.ts",
-      "default": "./dist/tabler/outline/*.jsx"
-    },
-    "./tabler/*": {
-      "types": "./dist/tabler/*.d.ts",
-      "default": "./dist/tabler/*.jsx"
+      "default": "./dist/tabler/outline/index.jsx"
     },
     "./heroicons": {
       "types": "./dist/heroicons/index.d.ts",
@@ -68,35 +51,19 @@
     },
     "./heroicons/24/outline": {
       "types": "./dist/heroicons/24/outline/index.d.ts",
-      "default": "./dist/heroicons/24/outline/index.js"
-    },
-    "./heroicons/24/outline/*": {
-      "types": "./dist/heroicons/24/outline/*.d.ts",
-      "default": "./dist/heroicons/24/outline/*.jsx"
+      "default": "./dist/heroicons/24/outline/index.jsx"
     },
     "./heroicons/24/solid": {
       "types": "./dist/heroicons/24/solid/index.d.ts",
-      "default": "./dist/heroicons/24/solid/index.js"
-    },
-    "./heroicons/24/solid/*": {
-      "types": "./dist/heroicons/24/solid/*.d.ts",
-      "default": "./dist/heroicons/24/solid/*.jsx"
+      "default": "./dist/heroicons/24/solid/index.jsx"
     },
     "./heroicons/16/solid": {
       "types": "./dist/heroicons/16/solid/index.d.ts",
-      "default": "./dist/heroicons/16/solid/index.js"
-    },
-    "./heroicons/16/solid/*": {
-      "types": "./dist/heroicons/16/solid/*.d.ts",
-      "default": "./dist/heroicons/16/solid/*.jsx"
+      "default": "./dist/heroicons/16/solid/index.jsx"
     },
     "./heroicons/20/solid": {
       "types": "./dist/heroicons/20/solid/index.d.ts",
-      "default": "./dist/heroicons/20/solid/index.js"
-    },
-    "./heroicons/20/solid/*": {
-      "types": "./dist/heroicons/20/solid/*.d.ts",
-      "default": "./dist/heroicons/20/solid/*.jsx"
+      "default": "./dist/heroicons/20/solid/index.jsx"
     },
     "./font-awesome": {
       "types": "./dist/font-awesome/index.d.ts",
@@ -104,27 +71,15 @@
     },
     "./font-awesome/solid": {
       "types": "./dist/font-awesome/solid/index.d.ts",
-      "default": "./dist/font-awesome/solid/index.js"
-    },
-    "./font-awesome/solid/*": {
-      "types": "./dist/font-awesome/solid/*.d.ts",
-      "default": "./dist/font-awesome/solid/*.jsx"
+      "default": "./dist/font-awesome/solid/index.jsx"
     },
     "./font-awesome/regular": {
       "types": "./dist/font-awesome/regular/index.d.ts",
-      "default": "./dist/font-awesome/regular/index.js"
-    },
-    "./font-awesome/regular/*": {
-      "types": "./dist/font-awesome/regular/*.d.ts",
-      "default": "./dist/font-awesome/regular/*.jsx"
+      "default": "./dist/font-awesome/regular/index.jsx"
     },
     "./font-awesome/brands": {
       "types": "./dist/font-awesome/brands/index.d.ts",
-      "default": "./dist/font-awesome/brands/index.js"
-    },
-    "./font-awesome/brands/*": {
-      "types": "./dist/font-awesome/brands/*.d.ts",
-      "default": "./dist/font-awesome/brands/*.jsx"
+      "default": "./dist/font-awesome/brands/index.jsx"
     },
     "./material-design": {
       "types": "./dist/material-design/index.d.ts",
@@ -132,51 +87,27 @@
     },
     "./material-design/filled": {
       "types": "./dist/material-design/filled/index.d.ts",
-      "default": "./dist/material-design/filled/index.js"
-    },
-    "./material-design/filled/*": {
-      "types": "./dist/material-design/filled/*.d.ts",
-      "default": "./dist/material-design/filled/*.jsx"
+      "default": "./dist/material-design/filled/index.jsx"
     },
     "./material-design/outlined": {
       "types": "./dist/material-design/outlined/index.d.ts",
-      "default": "./dist/material-design/outlined/index.js"
-    },
-    "./material-design/outlined/*": {
-      "types": "./dist/material-design/outlined/*.d.ts",
-      "default": "./dist/material-design/outlined/*.jsx"
+      "default": "./dist/material-design/outlined/index.jsx"
     },
     "./material-design/round": {
       "types": "./dist/material-design/round/index.d.ts",
-      "default": "./dist/material-design/round/index.js"
-    },
-    "./material-design/round/*": {
-      "types": "./dist/material-design/round/*.d.ts",
-      "default": "./dist/material-design/round/*.jsx"
+      "default": "./dist/material-design/round/index.jsx"
     },
     "./material-design/sharp": {
       "types": "./dist/material-design/sharp/index.d.ts",
-      "default": "./dist/material-design/sharp/index.js"
-    },
-    "./material-design/sharp/*": {
-      "types": "./dist/material-design/sharp/*.d.ts",
-      "default": "./dist/material-design/sharp/*.jsx"
+      "default": "./dist/material-design/sharp/index.jsx"
     },
     "./material-design/two-tone": {
       "types": "./dist/material-design/two-tone/index.d.ts",
-      "default": "./dist/material-design/two-tone/index.js"
-    },
-    "./material-design/two-tone/*": {
-      "types": "./dist/material-design/two-tone/*.d.ts",
-      "default": "./dist/material-design/two-tone/*.jsx"
+      "default": "./dist/material-design/two-tone/index.jsx"
     },
     "./remix": {
       "types": "./dist/remix/index.d.ts",
-      "default": "./dist/remix/index.js"
-    },
-    "./remix/*": {
-      "types": "./dist/remix/*.d.ts",
-      "default": "./dist/remix/*.jsx"
+      "default": "./dist/remix/index.jsx"
     },
     "./phosphor": {
       "types": "./dist/phosphor/index.d.ts",
@@ -184,59 +115,31 @@
     },
     "./phosphor/regular": {
       "types": "./dist/phosphor/regular/index.d.ts",
-      "default": "./dist/phosphor/regular/index.js"
-    },
-    "./phosphor/regular/*": {
-      "types": "./dist/phosphor/regular/*.d.ts",
-      "default": "./dist/phosphor/regular/*.jsx"
+      "default": "./dist/phosphor/regular/index.jsx"
     },
     "./phosphor/fill": {
       "types": "./dist/phosphor/fill/index.d.ts",
-      "default": "./dist/phosphor/fill/index.js"
-    },
-    "./phosphor/fill/*": {
-      "types": "./dist/phosphor/fill/*.d.ts",
-      "default": "./dist/phosphor/fill/*.jsx"
+      "default": "./dist/phosphor/fill/index.jsx"
     },
     "./phosphor/bold": {
       "types": "./dist/phosphor/bold/index.d.ts",
-      "default": "./dist/phosphor/bold/index.js"
-    },
-    "./phosphor/bold/*": {
-      "types": "./dist/phosphor/bold/*.d.ts",
-      "default": "./dist/phosphor/bold/*.jsx"
+      "default": "./dist/phosphor/bold/index.jsx"
     },
     "./phosphor/light": {
       "types": "./dist/phosphor/light/index.d.ts",
-      "default": "./dist/phosphor/light/index.js"
-    },
-    "./phosphor/light/*": {
-      "types": "./dist/phosphor/light/*.d.ts",
-      "default": "./dist/phosphor/light/*.jsx"
+      "default": "./dist/phosphor/light/index.jsx"
     },
     "./phosphor/thin": {
       "types": "./dist/phosphor/thin/index.d.ts",
-      "default": "./dist/phosphor/thin/index.js"
-    },
-    "./phosphor/thin/*": {
-      "types": "./dist/phosphor/thin/*.d.ts",
-      "default": "./dist/phosphor/thin/*.jsx"
+      "default": "./dist/phosphor/thin/index.jsx"
     },
     "./phosphor/duotone": {
       "types": "./dist/phosphor/duotone/index.d.ts",
-      "default": "./dist/phosphor/duotone/index.js"
-    },
-    "./phosphor/duotone/*": {
-      "types": "./dist/phosphor/duotone/*.d.ts",
-      "default": "./dist/phosphor/duotone/*.jsx"
+      "default": "./dist/phosphor/duotone/index.jsx"
     },
     "./bootstrap": {
       "types": "./dist/bootstrap/index.d.ts",
-      "default": "./dist/bootstrap/index.js"
-    },
-    "./bootstrap/*": {
-      "types": "./dist/bootstrap/*.d.ts",
-      "default": "./dist/bootstrap/*.jsx"
+      "default": "./dist/bootstrap/index.jsx"
     },
     "./iconoir": {
       "types": "./dist/iconoir/index.d.ts",
@@ -244,19 +147,11 @@
     },
     "./iconoir/regular": {
       "types": "./dist/iconoir/regular/index.d.ts",
-      "default": "./dist/iconoir/regular/index.js"
-    },
-    "./iconoir/regular/*": {
-      "types": "./dist/iconoir/regular/*.d.ts",
-      "default": "./dist/iconoir/regular/*.jsx"
+      "default": "./dist/iconoir/regular/index.jsx"
     },
     "./iconoir/solid": {
       "types": "./dist/iconoir/solid/index.d.ts",
-      "default": "./dist/iconoir/solid/index.js"
-    },
-    "./iconoir/solid/*": {
-      "types": "./dist/iconoir/solid/*.d.ts",
-      "default": "./dist/iconoir/solid/*.jsx"
+      "default": "./dist/iconoir/solid/index.jsx"
     },
     "./internal": {
       "types": "./dist/internal/index.d.ts",
@@ -264,23 +159,11 @@
     },
     "./internal/filled": {
       "types": "./dist/internal/filled/index.d.ts",
-      "default": "./dist/internal/filled/index.js"
-    },
-    "./internal/filled/*": {
-      "types": "./dist/internal/filled/*.d.ts",
-      "default": "./dist/internal/filled/*.jsx"
+      "default": "./dist/internal/filled/index.jsx"
     },
     "./internal/outline": {
       "types": "./dist/internal/outline/index.d.ts",
-      "default": "./dist/internal/outline/index.js"
-    },
-    "./internal/outline/*": {
-      "types": "./dist/internal/outline/*.d.ts",
-      "default": "./dist/internal/outline/*.jsx"
-    },
-    "./internal/*": {
-      "types": "./dist/internal/*.d.ts",
-      "default": "./dist/internal/*.jsx"
+      "default": "./dist/internal/outline/index.jsx"
     }
   },
   "scripts": {
@@ -290,5 +173,6 @@
     "type": "git",
     "url": "git+https://github.com/fluixi/icons.git",
     "directory": "packages/icons-jsx"
-  }
+  },
+  "sideEffects": false
 }

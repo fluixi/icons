@@ -13,15 +13,14 @@
       "@fluixi-icons/icon-phosphor",
       "@fluixi-icons/icon-bootstrap",
       "@fluixi-icons/icon-iconoir",
-      "@fluixi-icons/icon-internal"
+      "@fluixi-icons/icon-internal",
+      "@fluixi-icons/icons",
+      "@fluixi-icons/ui"
     ]
   ],
   "linked": [],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": [
-    "@fluixi-icons/icons",
-    "@fluixi-icons/ui"
-  ]
+  "ignore": []
 }

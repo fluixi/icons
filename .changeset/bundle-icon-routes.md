@@ -1,0 +1,12 @@
+---
+"@fluixi-icons/icons": patch
+"@fluixi-icons/ui": patch
+---
+
+Bundle each icon route into one module instead of one file per icon. The aggregate
+barrels shipped ~78k files and npm rejected the tarball (`E415 Too many files`); each
+route now emits a single module of named exports (`@fluixi-icons/ui/tabler`,
+`@fluixi-icons/icons/lucide`, …), which bundlers still tree-shake. Adds
+`sideEffects: false`. Per-icon deep-import subpaths (`…/tabler/*`) are removed —
+import the named export from the set instead. The JSX package ships raw `.jsx` so a
+Fluixi app (via `@fluixi/vite-plugin`) compiles it to Fluixi DOM automatically.

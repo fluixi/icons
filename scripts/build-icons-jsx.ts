@@ -1,28 +1,30 @@
 /**
  * build-icons-jsx.ts
  *
- * Builds @fluixi-icons/ui — pure JSX, one file per icon, no React import,
- * no TypeScript syntax. Works with any JSX runtime (React 17+, Preact, Solid).
+ * Builds @fluixi-icons/ui — pure JSX, no React import, no TypeScript syntax.
+ * Works with any JSX runtime (Fluixi, React 17+, Preact, Solid).
+ *
+ * One bundled module per route (all its icons as named exports), not a file per
+ * icon — npm rejects tarballs with too many files, and bundlers tree-shake named
+ * exports from a single ESM module just as well (the react-icons/solid-icons shape).
  *
  * Output per icon set:
- *   dist/{set}/alarm.jsx        ← one file per icon
- *   dist/{set}/alarm-fill.jsx
- *   dist/{set}/index.js         ← barrel re-export
+ *   dist/{set}/index.jsx        ← all the set's icons, named exports
+ *   dist/{set}/index.d.ts
+ *   dist/{set}/index.js         ← combined barrel for multi-variant sets
  *
- * Each icon file:
- *   export default function BiAlarm({ size = '1em', ...props }) {
+ * Each icon:
+ *   export function BiAlarm({ size = '1em', ...props }) {
  *     return (
  *       <svg fill="currentColor" viewBox="0 0 16 16" width={size} height={size} {...props}>
  *         <path d="..."/>
  *       </svg>
  *     )
  *   }
- *   export { BiAlarm }
  *
- * No `import React` — use the automatic JSX transform in your bundler:
- *   Vite:   plugins: [react()]  or  esbuild jsxImportSource
- *   Next:   automatic (default)
- *   tsc:    "jsx": "react-jsx", "jsxImportSource": "react"
+ * No `import React` — the consumer's bundler applies its own JSX transform. In a
+ * Fluixi app, @fluixi/vite-plugin sets esbuild `jsxImportSource: @fluixi/jsx`, so
+ * these compile to Fluixi DOM automatically (incl. node_modules pre-bundling).
  */
 
 import fs from "node:fs";
@@ -83,7 +85,11 @@ function convertAttrs(s: string): string {
 
 // ─── SVG string → JSX function component (plain JS, no types) ────────────────
 
-function svgToJsx(svg: string, name: string): string {
+/**
+ * One icon as a NAMED function export (no default). All of a route's icons live in
+ * one bundled module; `export function X` lets bundlers tree-shake unused ones.
+ */
+function svgToJsxNamed(svg: string, name: string): string {
   const clean = svg.replace(/<!--[\s\S]*?-->/g, "").trim();
   const outerMatch = clean.match(/^<svg([\s\S]*?)>([\s\S]*)<\/svg>$/i);
   if (!outerMatch) return "";
@@ -98,25 +104,13 @@ function svgToJsx(svg: string, name: string): string {
   const jsxInner  = convertAttrs(outerMatch[2].trim());
 
   return [
-    `export default function ${name}({ size = '1em', ...props }) {`,
+    `export function ${name}({ size = '1em', ...props }) {`,
     `  return (`,
     `    <svg ${jsxAttrs} width={size} height={size} {...props}>`,
     `      ${jsxInner}`,
     `    </svg>`,
     `  )`,
     `}`,
-    `export { ${name} }`,
-  ].join("\n");
-}
-
-/** Per-icon type declaration — depends only on the local shared types. */
-function iconDts(name: string, depth: number): string {
-  const up = "../".repeat(depth);
-  return [
-    `import type { IconProps, IconElement } from '${up}types.js'`,
-    `declare function ${name}(props?: IconProps): IconElement`,
-    `export default ${name}`,
-    `export { ${name} }`,
   ].join("\n");
 }
 
@@ -153,29 +147,30 @@ function writeJsxSet(outDir: string, route: string, icons: IconEntry[]): void {
 
   // depth = how many directories deep this route sits under dist/
   const depth = route.split("/").length;
+  const up = "../".repeat(depth);
 
-  const barrelJs:  string[] = [];
-  const barrelDts: string[] = [];
-  const seen = new Set<string>(); // guard against two slugs → same component name
+  // All of a route's icons live in ONE bundled module (named exports), not a file
+  // per icon. Bundlers tree-shake the unused named functions, so consumers still
+  // pay only for what they import — but the package ships ~2 files per route
+  // instead of thousands (npm rejects tarballs with too many files). This is the
+  // react-icons / solid-icons distribution shape.
+  const components: string[] = [];
+  const dtsLines: string[] = [`import type { IconProps, IconElement } from '${up}types.js'`];
+  const seen = new Set<string>();
 
-  for (const { name, slug, svg } of icons) {
-    const component = svgToJsx(svg, name);
+  for (const { name, svg } of icons) {
+    if (seen.has(name)) continue; // two slugs → same component name: keep the first
+    const component = svgToJsxNamed(svg, name);
     if (!component) continue;
-
-    // One .jsx + .d.ts file per icon (tree-shakeable, deep-importable)
-    fs.writeFileSync(path.join(outDir, `${slug}.jsx`), component + "\n");
-    fs.writeFileSync(path.join(outDir, `${slug}.d.ts`), iconDts(name, depth) + "\n");
-
-    if (seen.has(name)) continue; // skip duplicate component names in the barrel
     seen.add(name);
-    // Single named re-export — the per-icon file exposes both named and
-    // default, so re-exporting the name once avoids a duplicate export.
-    barrelJs.push(`export { ${name} } from './${slug}.jsx'`);
-    barrelDts.push(`export { ${name} } from './${slug}.js'`);
+    components.push(component);
+    dtsLines.push(`export declare function ${name}(props?: IconProps): IconElement`);
   }
 
-  fs.writeFileSync(path.join(outDir, "index.js"),   barrelJs.join("\n")  + "\n");
-  fs.writeFileSync(path.join(outDir, "index.d.ts"), barrelDts.join("\n") + "\n");
+  // The module carries raw JSX, so it must be `.jsx` for the consumer's JSX loader
+  // to transform it (bundlers apply the JSX loader by extension).
+  fs.writeFileSync(path.join(outDir, "index.jsx"),  components.join("\n\n") + "\n");
+  fs.writeFileSync(path.join(outDir, "index.d.ts"), dtsLines.join("\n")     + "\n");
 }
 
 // ─── Set definitions ─────────────────────────────────────────────────────────
@@ -247,19 +242,20 @@ for (const set of activeSets) {
     }
 
     writeJsxSet(path.join(JSX_DIST, route.api), route.api, icons);
-    console.log(`  ✓ ${route.api}: ${icons.length} files → dist/${route.api}/`);
+    console.log(`  ✓ ${route.api}: ${icons.length} icons → dist/${route.api}/index.jsx`);
     builtRoutes.push(route.api);
     if (set.routes.indexOf(route) === 0) totalIcons += icons.length;
   }
 
-  // Combined barrel for multi-variant sets (tabler, heroicons, …) whose
-  // top-level route is empty, so `@fluixi-icons/ui/tabler` re-exports variants.
+  // Combined barrel for multi-variant sets (tabler, heroicons, …) whose top-level
+  // route is empty, so `@fluixi-icons/ui/tabler` re-exports every variant module.
   if (!builtRoutes.includes(topApi) && builtRoutes.length > 0) {
     const rel = (r: string) => "./" + path.relative(topApi, r).split(path.sep).join("/");
-    const barrel = builtRoutes.map((r) => `export * from '${rel(r)}/index.js'`).join("\n");
+    const barrel = builtRoutes.map((r) => `export * from '${rel(r)}/index.jsx'`).join("\n");
+    const dts    = builtRoutes.map((r) => `export * from '${rel(r)}/index.js'`).join("\n");
     fs.mkdirSync(path.join(JSX_DIST, topApi), { recursive: true });
     fs.writeFileSync(path.join(JSX_DIST, topApi, "index.js"),   barrel + "\n");
-    fs.writeFileSync(path.join(JSX_DIST, topApi, "index.d.ts"), barrel + "\n");
+    fs.writeFileSync(path.join(JSX_DIST, topApi, "index.d.ts"), dts    + "\n");
     console.log(`  ✓ ${topApi}: combined barrel (${builtRoutes.length} variants)`);
   }
 }
@@ -272,5 +268,34 @@ fs.writeFileSync(
   `export type { IconProps, IconElement } from './types.js'\n`,
 );
 
+// Regenerate the package's exports map from the full SET definitions (not from what
+// this run built) so the committed map is complete and correct even from a filtered
+// local build — the routes are static. A multi-route set's top route is a `combined`
+// barrel (index.js re-exporting variants); every other route is a bundled `.jsx` leaf.
+writeExportsMap();
+
 console.log(`\n✅ @fluixi-icons/ui built — ${totalIcons} components`);
 console.log(`   Output: ${path.relative(ROOT, JSX_DIST)}/`);
+
+function writeExportsMap(): void {
+  const pkgPath = path.join(ROOT, "packages", "icons-jsx", "package.json");
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf8"));
+  const exports: Record<string, unknown> = {
+    ".": { types: "./dist/index.d.ts", default: "./dist/index.js" },
+    "./types": { types: "./dist/types.d.ts" },
+  };
+  for (const set of SETS) {
+    const combinedTop = set.routes.length > 1 ? set.routes[0].api : null;
+    for (const route of set.routes) {
+      const file = route.api === combinedTop ? "index.js" : "index.jsx";
+      exports[`./${route.api}`] = {
+        types: `./dist/${route.api}/index.d.ts`,
+        default: `./dist/${route.api}/${file}`,
+      };
+    }
+  }
+  pkg.exports = exports;
+  pkg.sideEffects = false; // pure named exports — let bundlers drop unused icons
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + "\n");
+  console.log(`  ✓ exports: ${Object.keys(exports).length - 2} route subpaths`);
+}
